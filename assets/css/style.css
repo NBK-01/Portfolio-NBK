@@ -6,8 +6,3 @@
    }
 
 
-.section{
-    height: 300px;
-    overflow-y: auto;
-    scroll-snap-type: y; 
-}
