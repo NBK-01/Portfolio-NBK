@@ -1,30 +1,16 @@
 
-body{
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-}
 
-.home-sec{
-    height :100%;
+
+#vanta{
+    position:absolute;
+    z-index:-1;
     width:100%;
-    scroll-snap-type: y mandatory;
-    overflow: scroll;
+    height:100%;  
 }
 
-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    scroll-snap-align: start;
-}
 
-.sec1{
-background-color: aqua;
-}
 
-.sec2{
-    background-color: black
-}
+
+
+
+
