@@ -5,6 +5,26 @@
 }
 
 
+nav{
+    background-color: var(--bg);
+    box-shadow: none !important;
+}
+
+.brand-logo {
+    margin-left: 45px;
+    margin-top: 45px;
+}
+
+.nav-wrapper a {
+ color: var(--text);
+}
+
+
+span{
+    color: var(--accent); 
+}
+
+
 
 #vanta{
     position:absolute;
