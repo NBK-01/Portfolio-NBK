@@ -4,15 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> NBK-01 | Home <title>
+    <title> NBK-01 | Home </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+
+    
+        <div id="vanta"> </div>
     
 
 
 
 
+
+
+    <script src="./assets/js/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.clouds.min.js" integrity="sha512-OUuElnLHxMmJyQwXUuVsRtzhSzF2vISQGd+UngDFdr8Hiod96/S0g39+OyeLVbRi8bp+MG3HGe52++D2EO4qAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        VANTA.CLOUDS({
+          el: "#vanta",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          backgroundColor: 0x3c3c3c,
+          skyColor: 0x404046,
+          cloudColor: 0xb0b0b6,
+          cloudShadowColor: 0x2b9648,
+          sunColor: 0x454645,
+          sunGlareColor: 0xd0d2d0,
+          sunlightColor: 0x6b6561,
+          speed: 0.90
+        })
+        </script>
 </body>
 </html>
