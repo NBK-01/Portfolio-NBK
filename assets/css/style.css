@@ -147,7 +147,7 @@ span{
     color: var(--text);
 	border-bottom: 4px solid var(--accent);
 	white-space: nowrap;
-	animation: typing 2s steps(30, end) forwards, blink 0.8s infinite;
+	animation: typing 3s steps(30, end) forwards, blink 0.8s infinite;
 	width: 0;
 }
 
