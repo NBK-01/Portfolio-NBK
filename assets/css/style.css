@@ -72,6 +72,10 @@ nav .link .what-link:hover::after{
 }
 
 
+.toggle-btn{
+    width: 1%;
+}
+
 
 #vanta.skew{
     transform: rotateY(30deg) translateX(-250px) scale(0.7);
