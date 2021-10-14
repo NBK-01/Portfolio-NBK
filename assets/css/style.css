@@ -5,9 +5,15 @@
     --font: 'Epilogue', sans-serif;
 }
 
+
+html{
+    cursor: url(../img/icons8-cursor-24.png), auto;
+}
+
+
 body {
     font-family: var(--font);
-    background-color: var(--bg)
+    background-color: var(--bg);
 }
 
 #preloader {
@@ -47,7 +53,7 @@ nav .link ul li{
     padding: 20px;
     text-transform: capitalize;
     color: var(--text);
-    cursor: pointer;
+    cursor: url(../img/icons8-hand-cursor-24.png), auto;
     transition: 0.7s;
     font-size: 40px;
 }
@@ -101,7 +107,7 @@ nav .toggle-btn i{
     font-size: 30px;
     color: var(--accent);
     margin-left: 25px;
-    cursor: pointer;
+    cursor: url(../img/icons8-hand-cursor-24.png), auto;
 }
 
 
