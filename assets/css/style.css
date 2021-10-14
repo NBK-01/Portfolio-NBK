@@ -18,6 +18,80 @@ body {
     z-index: 100;
 }
 
+nav{
+    width: 100%;
+    height: 60px;
+    padding: 20px 10vw;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: transparent;
+    box-shadow: none !important;
+}
+
+nav .link{
+    position: absolute;
+    width: 25vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: -25vw;
+}
+
+nav .link ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+
+nav .link ul li{
+    padding: 20px;
+    text-transform: capitalize;
+    color: var(--text)
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 40px;
+}
+
+
+nav .link.active{
+    right: 0;
+}
+
+nav .link ul li:hover{
+    transform: scale(1.3);
+}
+
+#vanta.skew{
+    transform: rotateY(30deg) translateX(-250px) scale(0.7);
+}
+
+
+
+ #vanta.skew::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -25%;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent);
+    transform: rotateY(50deg) scale(0.9);
+    z-index: -2;
+}
+
+
+
+
 .brand-logo {
     margin-left: 50%;
     margin-top: 10px;
@@ -41,7 +115,8 @@ span{
     position:absolute;
     z-index:-1;
     width:100%;
-    height:100%;  
+    height:100%;
+    transition: 0.5s;  
 }
 
 
