@@ -10,6 +10,14 @@ body {
     background-color: var(--bg)
 }
 
+#preloader {
+    background: var(--bg) url(../img/Infinity-1.2s-191px.gif) no-repeat center;
+    height: 100vh;
+    width: 100%;
+    position:fixed;
+    z-index: 100;
+}
+
 .brand-logo {
     margin-left: 50%;
     margin-top: 10px;
