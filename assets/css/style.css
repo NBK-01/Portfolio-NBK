@@ -24,6 +24,7 @@ header a {
 
 span{
     color: var(--accent); 
+    font-weight: bold;
 }
 
 
@@ -43,12 +44,51 @@ span{
 	width:100%;
 	position:absolute;
 	top: 50%;
-	transform: translateY(-50%) translateX(-50%);
-	left:50%;
+	transform: translateY(-50%);
 }
+
+
 
 .intro-sec{
     margin-left: 10%;
+}
+
+.intro-sec h1{
+    color: var(--text);
+}
+
+.type-con{
+    display: inline-block;
+	position:absolute;
+    top:100%;
+	transform: translateY(-50%);
+}
+
+.typewriter {
+	overflow: hidden;
+    color: var(--text);
+	border-bottom: 4px solid var(--accent);
+	white-space: nowrap;
+	animation: typing 2s steps(30, end) forwards, blink 0.8s infinite;
+	width: 0;
+}
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes blink {
+	from {
+		border-color: transparent;
+	}
+	to {
+		border-color: var(--accent);
+	}
 }
 
 
