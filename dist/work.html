@@ -24,8 +24,8 @@
 
         <div class="link">
             <ul>
-                <li class="who-link"> Who </li>
-                <li class="what-link"> What </li>
+                <li class="who-link"> Who <span class="span-type"> I am</span></li>
+                <li class="what-link"> What <span class="span-type"> I do </span> </li>
                 <li class="work-link"> Work  </li>
                 <li class="contact-link"> Contact </li>
             </ul>
@@ -42,9 +42,9 @@
             <h1 class="valign-wrapper left-title"> TOP </h1>
 
             <ul id="work-list" class="valign-wrapper center">
-                <li class="work-item"> BookWorm Haven <span> // </span> <p> MySQL | Handlebars | Materialize | Node.js | Express</p> </li>
-                <li class="work-item"> Trail Finder <span> // </span>  <p> Local Storage | HTML| Materialize | JS</p> </li>
-                <li class="work-item"> Weather Dash <span> // </span> <p> Local Storage | Materialize | JS | WebAPIs</p> </li>
+                <li class="work-item"> <a class="modal-trigger" href="#modal1">BookWorm Haven</a> <span class="slash"> // </span> <p> MySQL | Handlebars | Materialize | Node.js | Express</p> </li>
+                <li class="work-item"> Trail Finder <span class="slash"> // </span>  <p> Local Storage | HTML| Materialize | JS</p> </li>
+                <li class="work-item"> Weather Dash <span class="slash"> // </span> <p> Local Storage | Materialize | JS | WebAPIs</p> </li>
                 <li class="work-item"> Stockly <p> Swift | SwiftUI | Dart </p> </li>
             </ul>
     
@@ -54,7 +54,14 @@
         </div>
     </section>
 
-        
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+         <ul>
+             <li>View Demo</li>
+             <li>Github Repo</li>
+         </ul>
+        </div>
+      </div>
     
     
 
