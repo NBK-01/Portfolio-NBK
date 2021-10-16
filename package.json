@@ -1,0 +1,26 @@
+{
+  "name": "Portfolio-NBK",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NBK-01/Portfolio-NBK.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NBK-01/Portfolio-NBK/issues"
+  },
+  "homepage": "https://github.com/NBK-01/Portfolio-NBK#readme",
+  "dependencies": {
+    "three": "^0.133.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0"
+  }
+}
