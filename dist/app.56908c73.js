@@ -131,6 +131,11 @@ toggleBtn.addEventListener('click', function () {
   ul.classList.toggle('active');
   header.classList.toggle('skew');
 });
+header.addEventListener('click', function () {
+  toggleBtn.classList.remove('active');
+  ul.classList.remove('active');
+  header.classList.remove('skew');
+});
 workBtn.addEventListener('click', function () {
   window.location.href = 'work.html';
 });

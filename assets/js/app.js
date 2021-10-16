@@ -15,6 +15,12 @@ toggleBtn.addEventListener('click', () => {
     header.classList.toggle('skew');
 })
 
+header.addEventListener('click', () => {
+    toggleBtn.classList.remove('active');
+    ul.classList.remove('active');
+    header.classList.remove('skew');
+})
+
 workBtn.addEventListener('click', () => {
     window.location.href = 'work.html';
 })

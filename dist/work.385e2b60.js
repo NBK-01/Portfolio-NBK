@@ -130,6 +130,11 @@ toggleBtn.addEventListener('click', function () {
   ul.classList.toggle('active');
   header.classList.toggle('skew');
 });
+header.addEventListener('click', function () {
+  toggleBtn.classList.remove('active');
+  ul.classList.remove('active');
+  header.classList.remove('skew');
+});
 },{}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

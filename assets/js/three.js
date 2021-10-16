@@ -264,7 +264,7 @@ class WebGL{
             side: THREE.DoubleSide
         })
         this.mesh = new THREE.Mesh(this.geometry, this.material);
-        this.sizes.set(600, 350, 1);
+        this.sizes.set(500, 250, 1);
         this.mesh.scale.set(this.sizes.x, this.sizes.y, 1);
 
         this.mesh.position.set(this.offset.x, this.offset.y, 0);
