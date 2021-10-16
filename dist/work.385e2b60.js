@@ -36613,6 +36613,15 @@ var Webgl = /*#__PURE__*/function () {
     key: "setupCamera",
     value: function setupCamera() {
       var fov = 180 * (2 * Math.atan(this.viewport.height / 2 / this.perspective)) / Math.PI;
+      this.camera = new THREE.PerspectiveCamera(fov, this.viewport.aspectRatio, 0.1, 1000);
+      this.camera.position.set(0, 0, this.perspective);
+      this.renderer = new THREE.WebGL1Renderer({
+        antialias: true,
+        alpha: true
+      });
+      this.renderer.setSize(this.viewport.width, this.viewport.height);
+      this.renderer.setPixelRatio(window.devicePixelRatio);
+      this.container.appendChild(this.renderer.domElement);
     }
   }]);
 
