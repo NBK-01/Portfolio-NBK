@@ -140,9 +140,8 @@ span{
 
  #work-list{
     position: absolute;
-    left: 5%;
     top: 30%;
-    height: 60%;
+    left: 8%;
     width: 85%;
     list-style: none;
     display: flex;
@@ -181,6 +180,10 @@ h1{
 	transform: translateY(-90%);
 }
 
+
+.work-item:hover {
+    opacity: 1 !important;
+  }
 
 
  
