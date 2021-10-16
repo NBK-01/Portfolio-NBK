@@ -199,6 +199,25 @@ a{
     transition: 1s;
 }
 
+
+
+.modal-content ul{
+    width: 90%;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.modal-content ul li{
+    color: var(--text);
+    font-weight: bold;
+    /* font-style: italic; */
+    font-size: 50px;
+    transition: 1s;
+    cursor: url(../img/icons8-hand-cursor-24.png), auto;   
+}
+
 canvas {
     position: absolute;
     z-index: -2;
