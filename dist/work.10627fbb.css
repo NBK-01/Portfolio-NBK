@@ -143,6 +143,7 @@ span{
     top: 30%;
     left: 5%;
     width: 90%;
+    height:0px;
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -174,6 +175,7 @@ span{
     top: 37%;
     left: 4%;
     width: 90%;
+    height: 0px;
     list-style: none;
     display: flex;
     flex-direction: row;

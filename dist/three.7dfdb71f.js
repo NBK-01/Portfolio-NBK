@@ -36538,36 +36538,31 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function lerp(start, end, t) {
   return start * (1 - t) + end * t;
-} //Setting mouse coordinates
-
+}
 
 var targetX = 0;
-var targetY = 0; //Loading images as three texture
-
+var targetY = 0;
 var textureOne = new THREE.TextureLoader().load(_img.default.imageOne);
 var textureTwo = new THREE.TextureLoader().load(_img.default.imageTwo);
 var textureThree = new THREE.TextureLoader().load(_img.default.imageThree);
 var textureFour = new THREE.TextureLoader().load(_img.default.imageFour);
 
-var Webgl = /*#__PURE__*/function () {
-  function Webgl() {
+var WebGL = /*#__PURE__*/function () {
+  function WebGL() {
     var _this = this;
 
-    _classCallCheck(this, Webgl);
+    _classCallCheck(this, WebGL);
 
     this.container = document.querySelector('section');
     this.links = _toConsumableArray(document.getElementsByClassName('work-item'));
-    console.log(this.links);
-    this.scene = new THREE.Scene(); //Camera perspective on Z axis
+    this.scene = new THREE.Scene();
+    this.perspective = 1000;
+    this.sizes = new THREE.Vector2(0, 0);
+    this.offset = new THREE.Vector2(0, 0); // Positions of mesh on screen. Will be updated below.
 
-    this.perspective = 1000; //Size of mesh 
-
-    this.sizes = new THREE.Vector2(0, 0); //Position of mesh
-
-    this.offset = new THREE.Vector2(0, 0);
     this.uniforms = {
       uTexture: {
-        value: textureOne
+        value: 0.0
       },
       uAlpha: {
         value: 0.0
@@ -36596,15 +36591,18 @@ var Webgl = /*#__PURE__*/function () {
             break;
         }
       });
+      link.addEventListener('mouseleave', function () {
+        _this.uniforms.uTexture.value = 0.0;
+      });
     });
     this.addEventListeners(document.getElementById('work-list'));
-    this.setupCamera();
-    this.onMousemove();
+    this.setUpCamera();
+    this.onMouseMove();
     this.createMesh();
     this.render();
   }
 
-  _createClass(Webgl, [{
+  _createClass(WebGL, [{
     key: "viewport",
     get: function get() {
       var width = window.innerWidth;
@@ -36617,29 +36615,20 @@ var Webgl = /*#__PURE__*/function () {
       };
     }
   }, {
-    key: "onMousemove",
-    value: function onMousemove() {
-      window.addEventListener('mousemove', function (e) {
-        targetX = e.clientX;
-        targetY = e.clientY;
-      });
-    }
-  }, {
     key: "addEventListeners",
     value: function addEventListeners(element) {
       var _this2 = this;
 
       element.addEventListener('mouseenter', function () {
-        _this2.linksHover = true;
+        _this2.linkHovered = true;
       });
       element.addEventListener('mouseleave', function () {
-        _this2.linksHover = false;
+        _this2.linkHovered = false;
       });
     }
   }, {
-    key: "setupCamera",
-    value: function setupCamera() {
-      //resizing window
+    key: "setUpCamera",
+    value: function setUpCamera() {
       window.addEventListener('resize', this.onWindowResize.bind(this));
       var fov = 180 * (2 * Math.atan(this.viewport.height / 2 / this.perspective)) / Math.PI;
       this.camera = new THREE.PerspectiveCamera(fov, this.viewport.aspectRatio, 0.1, 1000);
@@ -36653,6 +36642,23 @@ var Webgl = /*#__PURE__*/function () {
       this.container.appendChild(this.renderer.domElement);
     }
   }, {
+    key: "createMesh",
+    value: function createMesh() {
+      this.geometry = new THREE.PlaneGeometry(1, 1, 20, 20);
+      this.material = new THREE.ShaderMaterial({
+        uniforms: this.uniforms,
+        vertexShader: _vertex.default,
+        fragmentShader: _fragment.default,
+        transparent: true,
+        side: THREE.DoubleSide
+      });
+      this.mesh = new THREE.Mesh(this.geometry, this.material);
+      this.sizes.set(600, 350, 1);
+      this.mesh.scale.set(this.sizes.x, this.sizes.y, 1);
+      this.mesh.position.set(this.offset.x, this.offset.y, 0);
+      this.scene.add(this.mesh);
+    }
+  }, {
     key: "onWindowResize",
     value: function onWindowResize() {
       this.camera.aspect = this.viewport.aspectRatio;
@@ -36661,29 +36667,23 @@ var Webgl = /*#__PURE__*/function () {
       this.camera.updateProjectionMatrix();
     }
   }, {
-    key: "createMesh",
-    value: function createMesh() {
-      this.geometry = new THREE.PlaneGeometry(1, 1, 20, 20); // this.material = new THREE.MeshBasicMaterial({color: 0x39ff13});
-
-      this.material = new THREE.ShaderMaterial({
-        uniforms: this.uniforms,
-        vertexShader: _vertex.default,
-        fragmentShader: _fragment.default,
-        transparent: true
+    key: "onMouseMove",
+    value: function onMouseMove() {
+      window.addEventListener('mousemove', function (e) {
+        targetX = e.clientX;
+        targetY = e.clientY;
       });
-      this.mesh = new THREE.Mesh(this.geometry, this.material);
-      this.sizes.set(600, 250);
-      this.mesh.scale.set(this.sizes.x, this.sizes.y);
-      this.mesh.position.set(this.offset.x, this.offset.y, 0);
-      this.scene.add(this.mesh);
     }
   }, {
     key: "render",
     value: function render() {
       this.offset.x = lerp(this.offset.x, targetX, 0.1);
       this.offset.y = lerp(this.offset.y, targetY, 0.1);
-      this.uniforms.uOffset.value.set((targetX - this.offset.x) * 0.0005, -(targetY - this.offset.y) * 0.0005);
-      this.linkHover ? this.uniforms.uAlpha.value = lerp(this.uniforms.uAlpha.value, 1.0, 0.1) : this.uniforms.uAlpha.value = lerp(this.uniforms.uAlpha.value, 0.0, 0.1);
+      this.uniforms.uOffset.value.set((targetX - this.offset.x) * 0.0005, -(targetY - this.offset.y) * 0.0005); // this.mesh.scale.set(this.sizes.x, this.sizes.y)
+
+      this.mesh.position.set(this.offset.x - window.innerWidth / 2, -this.offset.y + window.innerHeight / 2, 0); // set uAlpha when list is hovered / unhovered
+
+      this.linkHovered ? this.uniforms.uAlpha.value = lerp(this.uniforms.uAlpha.value, 1.0, 0.1) : this.uniforms.uAlpha.value = lerp(this.uniforms.uAlpha.value, 0.0, 0.1);
 
       for (var i = 0; i < this.links.length; i++) {
         if (this.linkHovered) {
@@ -36693,16 +36693,15 @@ var Webgl = /*#__PURE__*/function () {
         }
       }
 
-      this.mesh.position.set(this.offset.x - window.innerWidth / 2, -this.offset.y + window.innerHeight / 2, 0);
       this.renderer.render(this.scene, this.camera);
-      requestAnimationFrame(this.render.bind(this));
+      window.requestAnimationFrame(this.render.bind(this));
     }
   }]);
 
-  return Webgl;
+  return WebGL;
 }();
 
-new Webgl();
+new WebGL();
 },{"three":"node_modules/three/build/three.module.js","./img":"assets/js/img.js","./shaders/vertex.glsl":"assets/js/shaders/vertex.glsl","./shaders/fragment.glsl":"assets/js/shaders/fragment.glsl"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
