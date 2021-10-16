@@ -35,7 +35,59 @@ class Webgl{
     constructor(){
         this.container = document.querySelector('main');
         this.links = [...document.querySelectorAll('.work')]
-        this.scene = new THREE.Scene
+        this.scene = new THREE.Scene();
+        //Camera perspective on Z axis
+        this.perspective = 1000;
+        //Size of mesh 
+        this.sizes =  new THREE.Vector2(0,0);
+        //Position of mesh
+        this.offset = new THREE.Vector2(0,0);
+        this.uniforms = {
+            uTexture: {value: textureOne},
+            uAlpha: {value: 0.0},
+            uOffset: {value: new THREE.Vector2(0.0, 0.0)}
+        }
+        this.links.forEach((link, idx) =>{
+           link.addEventListener('mouseenter', () => {
+               switch(idx){
+                   case 0:
+                       this.uniforms.uTexture.value = textureOne;
+                       break;
+                    case 1:
+                        this.uniforms.uTexture.value = textureTwo
+                        break;
+               }
+           }) 
+        })
+
+       this.addEventListeners(document.querySelector('.work-list'));
+       this.setupCamera();
+
+    }
+
+    get viewport() {
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+        let aspectRatio = width / height;
+
+        return {
+            width,
+            height, 
+            aspectRatio
+        }
+    }
+
+    addEventListeners(element){
+        element.addEventListener('mouseenter', () =>{
+            this.linksHover = true;
+        })
+        element.addEventListener('mouseleave', () =>{
+            this.linksHover = false;
+        } )
+    }
+
+    setupCamera(){
+        let fov = (180 * (2 * Math.atan(this.viewport.height / 2 / this.perspective))) / Math.PI;
     }
 }
 

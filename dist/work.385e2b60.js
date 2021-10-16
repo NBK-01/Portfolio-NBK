@@ -36514,6 +36514,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 var loader = document.getElementById("preloader");
 window.addEventListener("load", function () {
   loader.style.display = "none";
@@ -36538,13 +36542,82 @@ var targetY = 0; //Loading images as three texture
 var textureOne = new THREE.TextureLoader().load(_img.default.imageOne);
 var textureTwo = new THREE.TextureLoader().load(_img.default.imageTwo);
 
-var Webgl = function Webgl() {
-  _classCallCheck(this, Webgl);
+var Webgl = /*#__PURE__*/function () {
+  function Webgl() {
+    var _this = this;
 
-  this.container = document.querySelector('main');
-  this.links = _toConsumableArray(document.querySelectorAll('.work'));
-  this.scene = new THREE.Scene();
-};
+    _classCallCheck(this, Webgl);
+
+    this.container = document.querySelector('main');
+    this.links = _toConsumableArray(document.querySelectorAll('.work'));
+    this.scene = new THREE.Scene(); //Camera perspective on Z axis
+
+    this.perspective = 1000; //Size of mesh 
+
+    this.sizes = new THREE.Vector2(0, 0); //Position of mesh
+
+    this.offset = new THREE.Vector2(0, 0);
+    this.uniforms = {
+      uTexture: {
+        value: textureOne
+      },
+      uAlpha: {
+        value: 0.0
+      },
+      uOffset: {
+        value: new THREE.Vector2(0.0, 0.0)
+      }
+    };
+    this.links.forEach(function (link, idx) {
+      link.addEventListener('mouseenter', function () {
+        switch (idx) {
+          case 0:
+            _this.uniforms.uTexture.value = textureOne;
+            break;
+
+          case 1:
+            _this.uniforms.uTexture.value = textureTwo;
+            break;
+        }
+      });
+    });
+    this.addEventListeners(document.querySelector('.work-list'));
+    this.setupCamera();
+  }
+
+  _createClass(Webgl, [{
+    key: "viewport",
+    get: function get() {
+      var width = window.innerWidth;
+      var height = window.innerHeight;
+      var aspectRatio = width / height;
+      return {
+        width: width,
+        height: height,
+        aspectRatio: aspectRatio
+      };
+    }
+  }, {
+    key: "addEventListeners",
+    value: function addEventListeners(element) {
+      var _this2 = this;
+
+      element.addEventListener('mouseenter', function () {
+        _this2.linksHover = true;
+      });
+      element.addEventListener('mouseleave', function () {
+        _this2.linksHover = false;
+      });
+    }
+  }, {
+    key: "setupCamera",
+    value: function setupCamera() {
+      var fov = 180 * (2 * Math.atan(this.viewport.height / 2 / this.perspective)) / Math.PI;
+    }
+  }]);
+
+  return Webgl;
+}();
 
 new Webgl();
 },{"three":"node_modules/three/build/three.module.js","./img":"assets/js/img.js"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
