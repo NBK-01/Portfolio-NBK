@@ -209,7 +209,7 @@ class WebGL{
             })
 
             link.addEventListener('mouseleave', () => {
-                this.uniforms.uTexture.value = 0.0
+                lerp(this.uniforms.uAlpha.value, 0.1);
             });
         })
         this.addEventListeners(document.getElementById('work-list'));
