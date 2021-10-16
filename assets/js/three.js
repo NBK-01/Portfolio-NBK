@@ -123,7 +123,7 @@ class Webgl{
             transparent: true,
         })
         this.mesh = new THREE.Mesh(this.geometry, this.material);
-        this.sizes.set(800, 350);
+        this.sizes.set(600, 250);
         this.mesh.scale.set(this.sizes.x, this.sizes.y);
         this.mesh.position.set(this.offset.x, this.offset.y, 0);
         this.scene.add(this.mesh);
@@ -138,6 +138,16 @@ class Webgl{
         this.linkHovered 
         ? this.uniforms.uAlpha.value = lerp(this.uniforms.uAlpha.value, 1.0, 0.1)
         : this.uniforms.uAlpha.value = lerp(this.uniforms.uAlpha.value, 0.0, 0.1);
+
+        for(let i = 0; i< this.links.length; i++){
+            if(this.linkHovered){
+                this.links[i].style.opacity = 0.2
+            }else{
+                this.links[i].style.opacity = 1
+            }
+            
+        
+    }
 
         this.mesh.position.set(this.offset.x - (window.innerWidth / 2), -this.offset.y + (window.innerHeight / 2), 0);
         this.renderer.render(this.scene, this.camera);
