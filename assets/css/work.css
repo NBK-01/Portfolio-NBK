@@ -139,7 +139,7 @@ span{
 ul{
     position: absolute;
     list-style: none;
-    height:35%;
+    height:60%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

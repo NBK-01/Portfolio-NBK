@@ -36465,8 +36465,12 @@ if (typeof window !== 'undefined') {
 }
 },{}],"assets/img/bookworm.jpg":[function(require,module,exports) {
 module.exports = "/bookworm.8bd90d91.jpg";
-},{}],"assets/img/screenshot.png":[function(require,module,exports) {
-module.exports = "/screenshot.ca77004e.png";
+},{}],"assets/img/screenshot.jpg":[function(require,module,exports) {
+module.exports = "/screenshot.23efe289.jpg";
+},{}],"assets/img/Weather-Dash.jpg":[function(require,module,exports) {
+module.exports = "/Weather-Dash.fa66e8ab.jpg";
+},{}],"assets/img/Stocklypic.jpg":[function(require,module,exports) {
+module.exports = "/Stocklypic.5420af9b.jpg";
 },{}],"assets/js/img.js":[function(require,module,exports) {
 "use strict";
 
@@ -36477,17 +36481,23 @@ exports.default = void 0;
 
 var _bookworm = _interopRequireDefault(require("../img/bookworm.jpg"));
 
-var _screenshot = _interopRequireDefault(require("../img/screenshot.png"));
+var _screenshot = _interopRequireDefault(require("../img/screenshot.jpg"));
+
+var _WeatherDash = _interopRequireDefault(require("../img/Weather-Dash.jpg"));
+
+var _Stocklypic = _interopRequireDefault(require("../img/Stocklypic.jpg"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var images = {
   imageOne: _bookworm.default,
-  imageTwo: _screenshot.default
+  imageTwo: _screenshot.default,
+  imageThree: _WeatherDash.default,
+  imageFour: _Stocklypic.default
 };
 var _default = images;
 exports.default = _default;
-},{"../img/bookworm.jpg":"assets/img/bookworm.jpg","../img/screenshot.png":"assets/img/screenshot.png"}],"assets/js/shaders/vertex.glsl":[function(require,module,exports) {
+},{"../img/bookworm.jpg":"assets/img/bookworm.jpg","../img/screenshot.jpg":"assets/img/screenshot.jpg","../img/Weather-Dash.jpg":"assets/img/Weather-Dash.jpg","../img/Stocklypic.jpg":"assets/img/Stocklypic.jpg"}],"assets/js/shaders/vertex.glsl":[function(require,module,exports) {
 module.exports = "#define GLSLIFY 1\n// uniform sampler2D uTexture;\n// uniform vec2 uOffset;\n// varying vec2 vUv;\n\n// float M_PI = 3.141529;\n\n// vec3 deformationCurve = (vec3 position, vec2 uv, vec2 offset){\n//     position.x = position.x + (sin(uv.y * M_PI) * offset.x);\n//     position.y = position.y + (sin(uv.x * M_PI) * offset.y);\n//     return position;\n// }\n\n// void main() {\n//     vUv = uv;\n//     vec3 newPosition = deformationCurve(position, uv, uOffset);\n//     gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);\n// }\n\nuniform sampler2D uTexture;\nuniform vec2 uOffset;\nvarying vec2 vUv;\n\nfloat M_PI = 3.141529;\n\nvec3 deformationCurve(vec3 position, vec2 uv, vec2 offset){\n    position.x = position.x + (sin(uv.y * M_PI) * offset.x);\n    position.y = position.y + (sin(uv.x * M_PI) * offset.y);\n    return position;\n}\n\nvoid main(){\n    vUv = uv;\n    vec3 newPosition = deformationCurve(position, uv, uOffset);\n    gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);\n}\n";
 },{}],"assets/js/shaders/fragment.glsl":[function(require,module,exports) {
 module.exports = "#define GLSLIFY 1\nuniform sampler2D uTexture;\nuniform float uAlpha;\nuniform vec2 uOffset;\nvarying vec2 vUv;\n\nvoid main() {\n    vec4 color = texture2D(uTexture, vUv);\n    gl_FragColor = color;\n}";
@@ -36549,6 +36559,8 @@ var targetY = 0; //Loading images as three texture
 
 var textureOne = new THREE.TextureLoader().load(_img.default.imageOne);
 var textureTwo = new THREE.TextureLoader().load(_img.default.imageTwo);
+var textureThree = new THREE.TextureLoader().load(_img.default.imageThree);
+var textureFour = new THREE.TextureLoader().load(_img.default.imageFour);
 
 var Webgl = /*#__PURE__*/function () {
   function Webgl() {
@@ -36556,8 +36568,9 @@ var Webgl = /*#__PURE__*/function () {
 
     _classCallCheck(this, Webgl);
 
-    this.container = document.querySelector('main');
-    this.links = _toConsumableArray(document.querySelectorAll('.work'));
+    this.container = document.querySelector('section');
+    this.links = _toConsumableArray(document.querySelectorAll('li'));
+    console.log(this.links);
     this.scene = new THREE.Scene(); //Camera perspective on Z axis
 
     this.perspective = 1000; //Size of mesh 
@@ -36586,10 +36599,18 @@ var Webgl = /*#__PURE__*/function () {
           case 1:
             _this.uniforms.uTexture.value = textureTwo;
             break;
+
+          case 2:
+            _this.uniforms.uTexture.value = textureThree;
+            break;
+
+          case 3:
+            _this.uniforms.uTexture.value = textureFour;
+            break;
         }
       });
     });
-    this.addEventListeners(document.querySelector('#work-list'));
+    this.addEventListeners(document.getElementById('work-list'));
     this.setupCamera();
     this.onMousemove();
     this.createMesh();
@@ -36664,7 +36685,7 @@ var Webgl = /*#__PURE__*/function () {
         transparent: true
       });
       this.mesh = new THREE.Mesh(this.geometry, this.material);
-      this.sizes.set(500, 222);
+      this.sizes.set(256, 125);
       this.mesh.scale.set(this.sizes.x, this.sizes.y);
       this.mesh.position.set(this.offset.x, this.offset.y, 0);
       this.scene.add(this.mesh);
@@ -36672,6 +36693,11 @@ var Webgl = /*#__PURE__*/function () {
   }, {
     key: "render",
     value: function render() {
+      this.offset.x = lerp(this.offset.x, targetX, 0.1);
+      this.offset.y = lerp(this.offset.y, targetY, 0.1);
+      this.uniforms.uOffset.value.set((targetX - this.offset.x) * 0.0005, -(targetY - this.offset.y) * 0.0005);
+      this.linkHovered ? this.uniforms.uAlpha.value = lerp(this.uniforms.uAlpha.value, 1.0, 0.1) : this.uniforms.uAlpha.value = lerp(this.uniforms.uAlpha.value, 0.0, 0.1);
+      this.mesh.position.set(this.offset.x - window.innerWidth / 2, -this.offset.y + window.innerHeight / 2, 0);
       this.renderer.render(this.scene, this.camera);
       requestAnimationFrame(this.render.bind(this));
     }
@@ -36709,7 +36735,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59327" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62846" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

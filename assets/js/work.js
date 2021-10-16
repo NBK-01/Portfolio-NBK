@@ -33,11 +33,14 @@ let targetY = 0;
 //Loading images as three texture
 const textureOne = new THREE.TextureLoader().load(images.imageOne);
 const textureTwo = new THREE.TextureLoader().load(images.imageTwo);
+const textureThree = new THREE.TextureLoader().load(images.imageThree);
+const textureFour = new THREE.TextureLoader().load(images.imageFour);
 
 class Webgl{
     constructor(){
-        this.container = document.querySelector('main');
-        this.links = [...document.querySelectorAll('.work')]
+        this.container = document.querySelector('section');
+        this.links = [...document.querySelectorAll('li')];
+        console.log(this.links);
         this.scene = new THREE.Scene();
         //Camera perspective on Z axis
         this.perspective = 1000;
@@ -57,13 +60,19 @@ class Webgl{
                        this.uniforms.uTexture.value = textureOne;
                        break;
                     case 1:
-                        this.uniforms.uTexture.value = textureTwo
+                        this.uniforms.uTexture.value = textureTwo;
                         break;
+                        case 2:
+                            this.uniforms.uTexture.value = textureThree;
+                            break;
+                            case 3:
+                                this.uniforms.uTexture.value = textureFour;
+                                break;
                }
            }) 
         })
 
-       this.addEventListeners(document.querySelector('#work-list'));
+       this.addEventListeners(document.getElementById('work-list'));
        this.setupCamera();
        this.onMousemove();
        this.createMesh();
@@ -132,7 +141,7 @@ class Webgl{
             transparent: true,
         })
         this.mesh = new THREE.Mesh(this.geometry, this.material);
-        this.sizes.set(500, 222);
+        this.sizes.set(256, 125);
         this.mesh.scale.set(this.sizes.x, this.sizes.y);
         this.mesh.position.set(this.offset.x, this.offset.y, 0);
         this.scene.add(this.mesh);
@@ -140,6 +149,15 @@ class Webgl{
     }
 
     render(){
+        this.offset.x = lerp(this.offset.x, targetX, 0.1);
+        this.offset.y = lerp(this.offset.y, targetY, 0.1);
+        this.uniforms.uOffset.value.set((targetX- this.offset.x) * 0.0005 , -(targetY- this.offset.y) * 0.0005 );
+
+        this.linkHovered 
+        ? this.uniforms.uAlpha.value = lerp(this.uniforms.uAlpha.value, 1.0, 0.1)
+        : this.uniforms.uAlpha.value = lerp(this.uniforms.uAlpha.value, 0.0, 0.1);
+
+        this.mesh.position.set(this.offset.x - (window.innerWidth / 2), -this.offset.y + (window.innerHeight / 2), 0);
         this.renderer.render(this.scene, this.camera);
         requestAnimationFrame(this.render.bind(this));
     }
