@@ -11,7 +11,7 @@
 
 
 html, body {
-    cursor: url(../img/icons8-cursor-24.png), auto;
+    cursor: url(/icons8-cursor-24.a6db867c.png), auto;
     background-color: var(--bg);
 }
 
@@ -26,7 +26,7 @@ html, body {
 }
 
 #preloader {
-    background: var(--bg) url(../img/Infinity-1.2s-191px.gif) no-repeat center;
+    background: var(--bg) url(/Infinity-1.2s-191px.349c2828.gif) no-repeat center;
     height: 100vh;
     width: 100%;
     position:fixed;
@@ -62,7 +62,7 @@ nav .link ul li{
     padding: 20px;
     text-transform: capitalize;
     color: var(--text);
-    cursor: url(../img/icons8-hand-cursor-24.png), auto;
+    cursor: url(/icons8-hand-cursor-24.886f4e8d.png), auto;
     transition: 0.7s;
     font-size: 40px;
 }
@@ -100,7 +100,7 @@ nav .toggle-btn i{
     font-size: 30px;
     color: var(--accent);
     margin-left: 25px;
-    cursor: url(../img/icons8-hand-cursor-24.png), auto;
+    cursor: url(/icons8-hand-cursor-24.886f4e8d.png), auto;
 }
 
 
@@ -109,7 +109,7 @@ nav .brand-logo {
     color: var(--text);
     text-decoration: none;
     font-size: 30px;
-    cursor: url(../img/icons8-hand-cursor-24.png), auto;
+    cursor: url(/icons8-hand-cursor-24.886f4e8d.png), auto;
     font-style: italic;
     font-weight: bold;
 }
@@ -175,3 +175,5 @@ h1{
 
 
  
+
+/*# sourceMappingURL=/work.10627fbb.css.map */
