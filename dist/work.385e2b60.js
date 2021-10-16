@@ -36463,8 +36463,8 @@ if (typeof window !== 'undefined') {
     window.__THREE__ = REVISION;
   }
 }
-},{}],"assets/img/bookworm.png":[function(require,module,exports) {
-module.exports = "/bookworm.2e81b16b.png";
+},{}],"assets/img/bookworm.jpg":[function(require,module,exports) {
+module.exports = "/bookworm.8bd90d91.jpg";
 },{}],"assets/img/screenshot.png":[function(require,module,exports) {
 module.exports = "/screenshot.ca77004e.png";
 },{}],"assets/js/img.js":[function(require,module,exports) {
@@ -36475,7 +36475,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _bookworm = _interopRequireDefault(require("../img/bookworm.png"));
+var _bookworm = _interopRequireDefault(require("../img/bookworm.jpg"));
 
 var _screenshot = _interopRequireDefault(require("../img/screenshot.png"));
 
@@ -36487,7 +36487,7 @@ var images = {
 };
 var _default = images;
 exports.default = _default;
-},{"../img/bookworm.png":"assets/img/bookworm.png","../img/screenshot.png":"assets/img/screenshot.png"}],"assets/js/shaders/vertex.glsl":[function(require,module,exports) {
+},{"../img/bookworm.jpg":"assets/img/bookworm.jpg","../img/screenshot.png":"assets/img/screenshot.png"}],"assets/js/shaders/vertex.glsl":[function(require,module,exports) {
 module.exports = "#define GLSLIFY 1\nuniform sampler2D uTexture;\nuniform vec2 uOffset;\nvarying vec2 vUv;\n\nfloat M_PI = 3.141529;\n\nvec3 deformationCurve = (vec3 position, vec2 uv, vec2 offset){\n    position.x = position.x + (sin(uv.y * M_PI) * offset.x);\n    position.y = position.y + (sin(uv.x * M_PI) * offset.y);\n    return position;\n}\n\nvoid main() {\n    vUv = uv;\n    vec3 newPosition = deformationCurve(position, uv, uOffset);\n    gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);\n}\n";
 },{}],"assets/js/shaders/fragment.glsl":[function(require,module,exports) {
 module.exports = "#define GLSLIFY 1\nuniform sampler2D uTexture;\nuniform float uAlpha;\nuniform vec2 uOffset;\nvarying vec2 vUv;\n\nvoid main() {\n    vec4 color = texture2D(uTexture, vUv);\n    gl_FragColor = color;\n}";
@@ -36664,7 +36664,7 @@ var Webgl = /*#__PURE__*/function () {
         transparent: true
       });
       this.mesh = new THREE.Mesh(this.geometry, this.material);
-      this.sizes.set(250, 350);
+      this.sizes.set(500, 222);
       this.mesh.scale.set(this.sizes.x, this.sizes.y);
       this.mesh.position.set(this.offset.x, this.offset.y, 0);
       this.scene.add(this.mesh);

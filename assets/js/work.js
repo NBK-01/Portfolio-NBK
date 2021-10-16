@@ -123,7 +123,7 @@ class Webgl{
     }
 
     createMesh(){
-        this.geometry = new THREE.PlaneGeometry(1, 1, 20, 20)
+        this.geometry = new THREE.PlaneGeometry(1, 1, 20, 20);
         // this.material = new THREE.MeshBasicMaterial({color: 0x39ff13});
         this.material = new THREE.ShaderMaterial({
             uniforms: this.uniforms,
@@ -132,7 +132,7 @@ class Webgl{
             transparent: true,
         })
         this.mesh = new THREE.Mesh(this.geometry, this.material);
-        this.sizes.set(250, 350);
+        this.sizes.set(500, 222);
         this.mesh.scale.set(this.sizes.x, this.sizes.y);
         this.mesh.position.set(this.offset.x, this.offset.y, 0);
         this.scene.add(this.mesh);
