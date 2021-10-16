@@ -120,6 +120,8 @@ nav .brand-logo {
 span{
     color: var(--accent); 
     font-weight: bold;
+    margin-left: 35px;
+    font-size: 55px;
 }
 
 
@@ -154,7 +156,8 @@ span{
     font-weight: bold;
     font-style: italic;
     font-size: 50px;
-    transition: 1s;    
+    transition: 1s;
+    cursor: url(/icons8-hand-cursor-24.886f4e8d.png), auto;    
 }
 
 canvas {
