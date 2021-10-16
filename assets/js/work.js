@@ -63,7 +63,7 @@ class Webgl{
            }) 
         })
 
-       this.addEventListeners(document.querySelector('.work-list'));
+       this.addEventListeners(document.querySelector('#work-list'));
        this.setupCamera();
        this.onMousemove();
        this.createMesh();
