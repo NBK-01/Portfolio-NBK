@@ -36583,6 +36583,9 @@ var Webgl = /*#__PURE__*/function () {
     });
     this.addEventListeners(document.querySelector('.work-list'));
     this.setupCamera();
+    this.onMousemove();
+    this.createMesh();
+    this.render();
   }
 
   _createClass(Webgl, [{
@@ -36596,6 +36599,14 @@ var Webgl = /*#__PURE__*/function () {
         height: height,
         aspectRatio: aspectRatio
       };
+    }
+  }, {
+    key: "onMousemove",
+    value: function onMousemove() {
+      window.addEventListener('mousemove', function (e) {
+        targetX = e.clientX;
+        targetY = e.clientY;
+      });
     }
   }, {
     key: "addEventListeners",
@@ -36612,6 +36623,8 @@ var Webgl = /*#__PURE__*/function () {
   }, {
     key: "setupCamera",
     value: function setupCamera() {
+      //resizing window
+      window.addEventListener('resize', this.onWindowResize.bind(this));
       var fov = 180 * (2 * Math.atan(this.viewport.height / 2 / this.perspective)) / Math.PI;
       this.camera = new THREE.PerspectiveCamera(fov, this.viewport.aspectRatio, 0.1, 1000);
       this.camera.position.set(0, 0, this.perspective);
@@ -36622,6 +36635,32 @@ var Webgl = /*#__PURE__*/function () {
       this.renderer.setSize(this.viewport.width, this.viewport.height);
       this.renderer.setPixelRatio(window.devicePixelRatio);
       this.container.appendChild(this.renderer.domElement);
+    }
+  }, {
+    key: "onWindowResize",
+    value: function onWindowResize() {
+      this.camera.aspect = this.viewport.aspectRatio;
+      this.camera.fov = 180 * (2 * Math.atan(this.viewport.height / 2 / this.perspective)) / Math.PI;
+      this.renderer.setSize(this.viewport.width, this.viewport.height);
+      this.camera.updateProjectionMatrix();
+    }
+  }, {
+    key: "createMesh",
+    value: function createMesh() {
+      this.geometry = new THREE.PlaneGeometry(1, 1, 20, 20);
+      this.material = new THREE.MeshBasicMaterial({
+        color: 0xff0000
+      });
+      this.mesh = new THREE.Mesh(this.geometry, this.material);
+      this.sizes.set(250, 350);
+      this.mesh.scale.set(this.sizes.x, this.sizes.y);
+      this.mesh.position.set(this.offset.x, this.offset.y, 0);
+      this.scene.add(this.mesh);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      this.renderer.render(this.scene, this.camera);
     }
   }]);
 
@@ -36657,7 +36696,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54676" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49919" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -62,6 +62,9 @@ class Webgl{
 
        this.addEventListeners(document.querySelector('.work-list'));
        this.setupCamera();
+       this.onMousemove();
+       this.createMesh();
+       this.render();
 
     }
 
@@ -77,6 +80,13 @@ class Webgl{
         }
     }
 
+    onMousemove(){
+        window.addEventListener('mousemove', (e) => {
+            targetX = e.clientX;
+            targetY = e.clientY;
+        })
+    }
+
     addEventListeners(element){
         element.addEventListener('mouseenter', () =>{
             this.linksHover = true;
@@ -87,6 +97,10 @@ class Webgl{
     }
 
     setupCamera(){
+        //resizing window
+        window.addEventListener('resize', this.onWindowResize.bind(this));
+
+
         let fov = (180 * (2 * Math.atan(this.viewport.height / 2 / this.perspective))) / Math.PI;
         this.camera = new THREE.PerspectiveCamera(fov, this.viewport.aspectRatio, 0.1, 1000);
         this.camera.position.set(0, 0, this.perspective);
@@ -96,6 +110,28 @@ class Webgl{
         this.renderer.setPixelRatio(window.devicePixelRatio);
         this.container.appendChild(this.renderer.domElement);
         
+    }
+
+    onWindowResize(){
+        this.camera.aspect = this.viewport.aspectRatio;
+        this.camera.fov = (180 * (2 * Math.atan(this.viewport.height / 2 / this.perspective))) / Math.PI;
+        this.renderer.setSize(this.viewport.width, this.viewport.height);
+        this.camera.updateProjectionMatrix();
+    }
+
+    createMesh(){
+        this.geometry = new THREE.PlaneGeometry(1, 1, 20, 20)
+        this.material = new THREE.MeshBasicMaterial({color: 0xff0000});
+        this.mesh = new THREE.Mesh(this.geometry, this.material);
+        this.sizes.set(250, 350);
+        this.mesh.scale.set(this.sizes.x, this.sizes.y);
+        this.mesh.position.set(this.offset.x, this.offset.y, 0);
+        this.scene.add(this.mesh);
+
+    }
+
+    render(){
+        this.renderer.render(this.scene, this.camera);
     }
 }
 
