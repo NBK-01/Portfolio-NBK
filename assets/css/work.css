@@ -141,8 +141,8 @@ span{
  #work-list{
     position: absolute;
     top: 30%;
-    left: 8%;
-    width: 85%;
+    left: 5%;
+    width: 90%;
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -157,6 +157,35 @@ span{
     font-size: 50px;
     transition: 1s;
     cursor: url(../img/icons8-hand-cursor-24.png), auto;    
+}
+
+.work-item p{
+    position: relative;
+    color: var(--accent);
+    font-style: italic;
+    font-weight: normal;
+    font-size: 15px;
+    transition: 1s;
+    margin-right: 15%
+}
+
+#work-desc{
+    position: absolute;
+    top: 37%;
+    left: 4%;
+    width: 90%;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#work-desc li{
+    position: relative;
+    color: var(--accent);
+    font-style: italic;
+    font-size: 20px;
+    transition: 1s;
 }
 
 canvas {
@@ -184,6 +213,8 @@ h1{
 .work-item:hover {
     opacity: 1 !important;
   }
+
+
 
 
  

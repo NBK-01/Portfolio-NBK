@@ -4,8 +4,7 @@ uniform vec2 uOffset;
 varying vec2 vUv;
 
 
-
-void main() {
+void main(){
     vec4 color = texture2D(uTexture, vUv);
-    gl_FragColor = color;
+    gl_FragColor = vec4(color);
 }
