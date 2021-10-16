@@ -36649,7 +36649,7 @@ var Webgl = /*#__PURE__*/function () {
     value: function createMesh() {
       this.geometry = new THREE.PlaneGeometry(1, 1, 20, 20);
       this.material = new THREE.MeshBasicMaterial({
-        color: 0xff0000
+        color: 0x39ff13
       });
       this.mesh = new THREE.Mesh(this.geometry, this.material);
       this.sizes.set(250, 350);
@@ -36661,6 +36661,7 @@ var Webgl = /*#__PURE__*/function () {
     key: "render",
     value: function render() {
       this.renderer.render(this.scene, this.camera);
+      requestAnimationFrame(this.renderer.bind(this));
     }
   }]);
 

@@ -121,7 +121,7 @@ class Webgl{
 
     createMesh(){
         this.geometry = new THREE.PlaneGeometry(1, 1, 20, 20)
-        this.material = new THREE.MeshBasicMaterial({color: 0xff0000});
+        this.material = new THREE.MeshBasicMaterial({color: 0x39ff13});
         this.mesh = new THREE.Mesh(this.geometry, this.material);
         this.sizes.set(250, 350);
         this.mesh.scale.set(this.sizes.x, this.sizes.y);
@@ -132,6 +132,7 @@ class Webgl{
 
     render(){
         this.renderer.render(this.scene, this.camera);
+        requestAnimationFrame(this.renderer.bind(this));
     }
 }
 
