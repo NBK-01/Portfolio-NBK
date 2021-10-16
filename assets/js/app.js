@@ -7,11 +7,16 @@ window.addEventListener("load", function(){
 const toggleBtn = document.querySelector('.toggle-btn');
 const ul = document.querySelector('nav .link');
 const header = document.querySelector('#vanta');
+const workBtn = document.querySelector('.work-link');
 
 toggleBtn.addEventListener('click', () => {
     toggleBtn.classList.toggle('active');
     ul.classList.toggle('active');
     header.classList.toggle('skew');
+})
+
+workBtn.addEventListener('click', () => {
+    window.location.href = 'work.html';
 })
 
 
