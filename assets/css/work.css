@@ -5,7 +5,6 @@
     --font: 'Epilogue', sans-serif;
 }
 
-
 html{
     cursor: url(../img/icons8-cursor-24.png), auto;
 }
@@ -14,6 +13,17 @@ html{
 body {
     font-family: var(--font);
     background-color: var(--bg);
+}
+
+
+.valign-wrapper{
+    margin: 0px;
+	padding:0px;
+	float: left;
+	width:100%;
+	position:absolute;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 #preloader {
@@ -77,31 +87,15 @@ nav .link .what-link:hover::after{
     color: var(--accent)
 }
 
+nav .link .work-link{
+color: var(--accent)
+}
+
 
 .toggle-btn{
     width: 1%;
 }
 
-
-#vanta.skew{
-    transform: rotateY(30deg) translateX(-250px) scale(0.7);
-}
-
-
-
- #vanta.skew::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -25%;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--accent);
-    transform: rotateY(50deg) scale(0.9);
-    z-index: -2;
-}
 
 nav .toggle-btn i{
     font-size: 30px;
@@ -127,78 +121,4 @@ span{
     font-weight: bold;
 }
 
-
-
-#vanta{
-    position:absolute;
-    z-index:-1;
-    width:100%;
-    height:100%;
-    transition: 0.5s;  
-}
-
-
-.valign-wrapper{
-    margin: 0px;
-	padding:0px;
-	float: left;
-	width:100%;
-	position:absolute;
-	top: 50%;
-	transform: translateY(-50%);
-}
-
-
-
-.intro-sec{
-    margin-left: 10%;
-}
-
-.intro-sec h1{
-    color: var(--text);
-}
-
-.type-con{
-    display: inline-block;
-	position:absolute;
-    top:100%;
-	transform: translateY(-50%);
-}
-
-.typewriter {
-	overflow: hidden;
-    color: var(--text);
-	border-bottom: 4px solid var(--accent);
-	white-space: nowrap;
-	animation: typing 3s steps(30, end) forwards, blink 0.8s infinite;
-    animation-delay: 1s;
-	width: 0;
-}
-
-@keyframes typing {
-	from {
-		width: 0;
-	}
-	to {
-		width: 100%;
-	}
-}
-
-@keyframes blink {
-	from {
-		border-color: transparent;
-	}
-	to {
-		border-color: var(--accent);
-	}
-}
-
-
-
-
-
-
-
-
-
-
+  
