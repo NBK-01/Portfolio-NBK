@@ -18,6 +18,9 @@ toggleBtn.addEventListener('click', () => {
 
 import * as THREE from 'three'
 import images from './img'
+import vertex from './shaders/vertex.glsl';
+import fragment from './shaders/fragment.glsl';
+
 
 function lerp(start, end, t) {
     return start * (1 - t) + end * t;
@@ -121,7 +124,13 @@ class Webgl{
 
     createMesh(){
         this.geometry = new THREE.PlaneGeometry(1, 1, 20, 20)
-        this.material = new THREE.MeshBasicMaterial({color: 0x39ff13});
+        // this.material = new THREE.MeshBasicMaterial({color: 0x39ff13});
+        this.material = new THREE.ShaderMaterial({
+            uniforms: this.uniforms,
+            vertexShader: vertex,
+            fragmentShader: fragment,
+            transparent: true,
+        })
         this.mesh = new THREE.Mesh(this.geometry, this.material);
         this.sizes.set(250, 350);
         this.mesh.scale.set(this.sizes.x, this.sizes.y);
@@ -132,7 +141,7 @@ class Webgl{
 
     render(){
         this.renderer.render(this.scene, this.camera);
-        requestAnimationFrame(this.renderer.bind(this));
+        requestAnimationFrame(this.render.bind(this));
     }
 }
 

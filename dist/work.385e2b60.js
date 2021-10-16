@@ -36487,12 +36487,20 @@ var images = {
 };
 var _default = images;
 exports.default = _default;
-},{"../img/bookworm.png":"assets/img/bookworm.png","../img/screenshot.png":"assets/img/screenshot.png"}],"assets/js/work.js":[function(require,module,exports) {
+},{"../img/bookworm.png":"assets/img/bookworm.png","../img/screenshot.png":"assets/img/screenshot.png"}],"assets/js/shaders/vertex.glsl":[function(require,module,exports) {
+module.exports = "#define GLSLIFY 1\nuniform sampler2D uTexture;\nuniform vec2 uOffset;\nvarying vec2 vUv;\n\nfloat M_PI = 3.141529;\n\nvec3 deformationCurve = (vec3 position, vec2 uv, vec2 offset){\n    position.x = position.x + (sin(uv.y * M_PI) * offset.x);\n    position.y = position.y + (sin(uv.x * M_PI) * offset.y);\n    return position;\n}\n\nvoid main() {\n    vUv = uv;\n    vec3 newPosition = deformationCurve(position, uv, uOffset);\n    gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);\n}\n";
+},{}],"assets/js/shaders/fragment.glsl":[function(require,module,exports) {
+module.exports = "#define GLSLIFY 1\nuniform sampler2D uTexture;\nuniform float uAlpha;\nuniform vec2 uOffset;\nvarying vec2 vUv;\n\nvoid main() {\n    vec4 color = texture2D(uTexture, vUv);\n    gl_FragColor = color;\n}";
+},{}],"assets/js/work.js":[function(require,module,exports) {
 "use strict";
 
 var THREE = _interopRequireWildcard(require("three"));
 
 var _img = _interopRequireDefault(require("./img"));
+
+var _vertex = _interopRequireDefault(require("./shaders/vertex.glsl"));
+
+var _fragment = _interopRequireDefault(require("./shaders/fragment.glsl"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36647,9 +36655,13 @@ var Webgl = /*#__PURE__*/function () {
   }, {
     key: "createMesh",
     value: function createMesh() {
-      this.geometry = new THREE.PlaneGeometry(1, 1, 20, 20);
-      this.material = new THREE.MeshBasicMaterial({
-        color: 0x39ff13
+      this.geometry = new THREE.PlaneGeometry(1, 1, 20, 20); // this.material = new THREE.MeshBasicMaterial({color: 0x39ff13});
+
+      this.material = new THREE.ShaderMaterial({
+        uniforms: this.uniforms,
+        vertexShader: _vertex.default,
+        fragmentShader: _fragment.default,
+        transparent: true
       });
       this.mesh = new THREE.Mesh(this.geometry, this.material);
       this.sizes.set(250, 350);
@@ -36661,7 +36673,7 @@ var Webgl = /*#__PURE__*/function () {
     key: "render",
     value: function render() {
       this.renderer.render(this.scene, this.camera);
-      requestAnimationFrame(this.renderer.bind(this));
+      requestAnimationFrame(this.render.bind(this));
     }
   }]);
 
@@ -36669,7 +36681,7 @@ var Webgl = /*#__PURE__*/function () {
 }();
 
 new Webgl();
-},{"three":"node_modules/three/build/three.module.js","./img":"assets/js/img.js"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"three":"node_modules/three/build/three.module.js","./img":"assets/js/img.js","./shaders/vertex.glsl":"assets/js/shaders/vertex.glsl","./shaders/fragment.glsl":"assets/js/shaders/fragment.glsl"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -36697,7 +36709,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49919" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59327" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
