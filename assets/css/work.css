@@ -136,32 +136,37 @@ span{
     border: 15px solid var(--accent);
 }
 
-ul{
-  height: 70%;
-  width: 80%;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 10px
+ #work-list{
+    position: absolute;
+    left: 5%;
+    top: 30%;
+    height: 60%;
+    width: 85%;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-ul li{
+.work-item{
     position: relative;
     color: var(--text);
     font-weight: bold;
     font-style: italic;
-    font-size: 60px;
+    font-size: 50px;
     transition: 1s;    
 }
 
-
+canvas {
+    position: absolute;
+    z-index: -2;
+  }
 
 h1{
     font-family: 'Bungee Outline', cursive;  
     color: var(--accent);
     opacity: 0.1;
-    font-size: 250px;
+    font-size: 300px;
 }
 
 .right-title{
@@ -169,8 +174,8 @@ h1{
 	padding:15px;
 	width:100%;
 	position:absolute;
-	top: 80%;
-	transform: translateY(-80%);
+	top: 90%;
+	transform: translateY(-90%);
 }
 
 

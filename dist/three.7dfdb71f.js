@@ -36683,7 +36683,7 @@ var Webgl = /*#__PURE__*/function () {
       this.offset.x = lerp(this.offset.x, targetX, 0.1);
       this.offset.y = lerp(this.offset.y, targetY, 0.1);
       this.uniforms.uOffset.value.set((targetX - this.offset.x) * 0.0005, -(targetY - this.offset.y) * 0.0005);
-      this.linkHovered ? this.uniforms.uAlpha.value = lerp(this.uniforms.uAlpha.value, 1.0, 0.1) : this.uniforms.uAlpha.value = lerp(this.uniforms.uAlpha.value, 0.0, 0.1);
+      this.linkHover ? this.uniforms.uAlpha.value = lerp(this.uniforms.uAlpha.value, 1.0, 0.1) : this.uniforms.uAlpha.value = lerp(this.uniforms.uAlpha.value, 0.0, 0.1);
 
       for (var i = 0; i < this.links.length; i++) {
         if (this.linkHovered) {
