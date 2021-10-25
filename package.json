@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html && parcel build work.html",
+    "build": "parcel build work.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
