@@ -131,8 +131,8 @@ a{
 .slash{
     color: var(--accent); 
     font-weight: bold;
-    margin-left: 35px;
-    font-size: 55px;  
+    /* margin-left: 35px; */
+    font-size: 20px;  
 }
 
 #work{
@@ -165,7 +165,7 @@ a{
     color: var(--text);
     font-weight: bold;
     /* font-style: italic; */
-    font-size: 50px;
+    font-size: 3.2em;
     transition: 1s;
     cursor: url(../img/icons8-hand-cursor-24.png), auto;    
 }
@@ -214,7 +214,7 @@ a{
     color: var(--text);
     font-weight: bold;
     /* font-style: italic; */
-    font-size: 50px;
+    font-size: 10px;
     transition: 1s;
     cursor: url(../img/icons8-hand-cursor-24.png), auto;   
 }
