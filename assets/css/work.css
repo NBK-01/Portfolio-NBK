@@ -228,7 +228,7 @@ h1{
     font-family: 'Bungee Outline', cursive;  
     color: var(--accent);
     opacity: 0.1;
-    font-size: 300px;
+    font-size: 17em;
 }
 
 .right-title{
