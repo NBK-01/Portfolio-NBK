@@ -214,7 +214,7 @@ a{
     color: var(--text);
     font-weight: bold;
     /* font-style: italic; */
-    font-size: 10px;
+    font-size: 35px;
     transition: 1s;
     cursor: url(../img/icons8-hand-cursor-24.png), auto;   
 }
