@@ -37,11 +37,11 @@ nav .link{
     position: absolute;
     width: 25vw;
     height: 100vh;
-    display: flex;
     justify-content: center;
     align-items: center;
     top: 0;
     right: -25vw;
+    display: none;
 }
 
 
@@ -66,6 +66,7 @@ nav .link ul li{
 
 nav .link.active{
     right: 0;
+    display: flex !important;
 }
 
 
