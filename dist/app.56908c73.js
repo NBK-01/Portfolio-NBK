@@ -139,6 +139,26 @@ header.addEventListener('click', function () {
 workBtn.addEventListener('click', function () {
   window.location.href = 'work.html';
 });
+gsap.registerPlugin(ScrollTrigger);
+gsap.defaults({
+  ease: 'none'
+});
+var tl = gsap.timeline();
+tl.from('.intro', {
+  yPercent: 100
+}).from('.about', {
+  yPercent: 100
+});
+ScrollTrigger.create({
+  animation: tl,
+  trigger: '#main-view',
+  start: 'top top',
+  end: 'bottom -100%',
+  scrub: 1,
+  pin: true,
+  anticipatePin: 1,
+  ease: 'none'
+});
 },{}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
