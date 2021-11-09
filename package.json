@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/NBK-01/Portfolio-NBK#readme",
   "dependencies": {
+    "gsap": "^3.8.0",
     "three": "^0.133.1"
   },
   "devDependencies": {

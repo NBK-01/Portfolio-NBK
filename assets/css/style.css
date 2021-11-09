@@ -10,7 +10,6 @@ html{
     cursor: url(../img/icons8-cursor-24.png), auto;
 }
 
-
 body {
     font-family: var(--font);
     background-color: var(--bg);
