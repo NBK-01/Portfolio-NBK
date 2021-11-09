@@ -28,4 +28,24 @@ workBtn.addEventListener('click', () => {
 })
 
 
+gsap.registerPlugin(ScrollTrigger);
+
+
+gsap.defaults({ ease: 'none' });
+
+const tl = gsap.timeline();
+tl.from('.intro', { yPercent: 100 })
+	.from('.about', { yPercent: 100 });
+
+ScrollTrigger.create({
+	animation: tl,
+	trigger: '#main-view',
+	start: 'top top',
+	end: 'bottom -100%',
+	scrub: 1,
+	pin: true,
+	anticipatePin: 1,
+	ease: 'none'
+});
+
 

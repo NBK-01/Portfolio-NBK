@@ -6,6 +6,13 @@
 }
 
 
+
+*, ::after, ::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 html{
     cursor: url(../img/icons8-cursor-24.png), auto;
 }
@@ -23,6 +30,9 @@ body {
     position:fixed;
     z-index: 100;
 }
+
+
+
 
 nav{
     background-color: transparent;
