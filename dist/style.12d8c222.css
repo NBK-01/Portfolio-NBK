@@ -1,0 +1,207 @@
+:root{
+    --accent: #39ff13;
+    --bg : #1e1f21;
+    --text: #F3FFF1;
+    --font: 'Epilogue', sans-serif;
+}
+
+
+html{
+    cursor: url(/icons8-cursor-24.4a2da24b.png), auto;
+}
+
+
+body {
+    font-family: var(--font);
+    background-color: var(--bg);
+}
+
+#preloader {
+    background: var(--bg) url(/Infinity-1.2s-191px.a2776f54.gif) no-repeat center;
+    height: 100vh;
+    width: 100%;
+    position:fixed;
+    z-index: 100;
+}
+
+nav{
+    background-color: transparent;
+    box-shadow: none !important;
+}
+
+nav .link{
+    position: absolute;
+    width: 25vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: -25vw;
+}
+
+nav .link ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+
+nav .link ul li{
+    padding: 20px;
+    text-transform: capitalize;
+    color: var(--text);
+    cursor: url(/icons8-hand-cursor-24.44e16df8.png), auto;
+    transition: 0.7s;
+    font-size: 40px;
+}
+
+
+nav .link.active{
+    right: 0;
+}
+
+nav .link ul li:hover{
+    transform: scale(1.2);
+}
+
+nav .link .who-link:hover:after{
+    content: "I am";
+    color: var(--accent)
+}
+
+nav .link .what-link:hover::after{
+    content: "I do";
+    color: var(--accent)
+}
+
+
+.toggle-btn{
+    width: 1%;
+}
+
+
+#vanta.skew{
+    transform: rotateY(30deg) translateX(-250px) scale(0.7);
+}
+
+
+
+ #vanta.skew::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -25%;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent);
+    transform: rotateY(50deg) scale(0.9);
+    z-index: -2;
+}
+
+nav .toggle-btn i{
+    font-size: 30px;
+    color: var(--accent);
+    margin-left: 25px;
+    cursor: url(/icons8-hand-cursor-24.44e16df8.png), auto;
+}
+
+
+
+nav .brand-logo {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 30px;
+    cursor: url(/icons8-hand-cursor-24.44e16df8.png), auto;
+}
+
+
+
+
+span{
+    color: var(--accent); 
+    font-weight: bold;
+}
+
+
+
+#vanta{
+    position:absolute;
+    z-index:-1;
+    width:100%;
+    height:100%;
+    transition: 0.5s;  
+}
+
+
+.valign-wrapper{
+    margin: 0px;
+	padding:0px;
+	float: left;
+	width:100%;
+	position:absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+
+
+.intro-sec{
+    margin-left: 10%;
+}
+
+.intro-sec h1{
+    color: var(--text);
+}
+
+.type-con{
+    display: inline-block;
+	position:absolute;
+    top:100%;
+	transform: translateY(-50%);
+}
+
+.typewriter {
+	overflow: hidden;
+    color: var(--text);
+	border-bottom: 4px solid var(--accent);
+	white-space: nowrap;
+	animation: typing 3s steps(30, end) forwards, blink 0.8s infinite;
+    animation-delay: 1s;
+	width: 0;
+}
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes blink {
+	from {
+		border-color: transparent;
+	}
+	to {
+		border-color: var(--accent);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*# sourceMappingURL=/style.12d8c222.css.map */

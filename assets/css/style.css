@@ -6,10 +6,16 @@
 }
 
 
+
+*, ::after, ::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 html{
     cursor: url(../img/icons8-cursor-24.png), auto;
 }
-
 
 body {
     font-family: var(--font);
@@ -25,6 +31,9 @@ body {
     z-index: 100;
 }
 
+
+
+
 nav{
     background-color: transparent;
     box-shadow: none !important;
@@ -34,11 +43,11 @@ nav .link{
     position: absolute;
     width: 25vw;
     height: 100vh;
-    display: flex;
     justify-content: center;
     align-items: center;
     top: 0;
     right: -25vw;
+    display: none;
 }
 
 nav .link ul{
@@ -62,6 +71,7 @@ nav .link ul li{
 
 nav .link.active{
     right: 0;
+    display: flex !important;
 }
 
 nav .link ul li:hover{

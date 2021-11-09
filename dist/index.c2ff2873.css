@@ -6,9 +6,19 @@
 }
 
 
+
+*, ::after, ::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+
 html{
     cursor: url(icons8-cursor-24.19602532.png), auto;
 }
+
 
 
 body {
@@ -16,6 +26,7 @@ body {
     background-color: var(--bg);
     font-display: swap;
 }
+
 
 
 #preloader {
@@ -27,22 +38,25 @@ body {
 }
 
 
+
 nav{
     background-color: transparent;
     box-shadow: none !important;
 }
 
 
+
 nav .link{
     position: absolute;
     width: 25vw;
     height: 100vh;
-    display: flex;
     justify-content: center;
     align-items: center;
     top: 0;
     right: -25vw;
+    display: none;
 }
+
 
 
 nav .link ul{
@@ -52,6 +66,7 @@ nav .link ul{
     flex-direction: column;
     list-style-type: none;
 }
+
 
 
 nav .link ul li{
@@ -64,14 +79,18 @@ nav .link ul li{
 }
 
 
+
 nav .link.active{
     right: 0;
+    display: flex !important;
 }
+
 
 
 nav .link ul li:hover{
     transform: scale(1.2);
 }
+
 
 
 nav .link .who-link:hover:after{
@@ -80,10 +99,12 @@ nav .link .who-link:hover:after{
 }
 
 
+
 nav .link .what-link:hover::after{
     content: "I do";
     color: var(--accent)
 }
+
 
 
 .toggle-btn{
@@ -91,9 +112,11 @@ nav .link .what-link:hover::after{
 }
 
 
+
 #vanta.skew{
     transform: rotateY(30deg) translateX(-250px) scale(0.7);
 }
+
 
 
 #vanta.skew::before{
@@ -111,12 +134,14 @@ nav .link .what-link:hover::after{
 }
 
 
+
 nav .toggle-btn i{
     font-size: 30px;
     color: var(--accent);
     margin-left: 25px;
     cursor: url(icons8-hand-cursor-24.ac313210.png), auto;
 }
+
 
 
 nav .brand-logo {
@@ -127,10 +152,12 @@ nav .brand-logo {
 }
 
 
+
 span{
     color: var(--accent); 
     font-weight: bold;
 }
+
 
 
 #vanta{
@@ -140,6 +167,7 @@ span{
     height:100%;
     transition: 0.5s;  
 }
+
 
 
 .valign-wrapper{
@@ -153,14 +181,17 @@ span{
 }
 
 
+
 .intro-sec{
     margin-left: 10%;
 }
 
 
+
 .intro-sec h1{
     color: var(--text);
 }
+
 
 
 .type-con{
@@ -169,6 +200,7 @@ span{
     top:100%;
 	transform: translateY(-50%);
 }
+
 
 
 .typewriter {
@@ -182,6 +214,7 @@ span{
 }
 
 
+
 @keyframes typing {
 	from {
 		width: 0;
@@ -190,6 +223,7 @@ span{
 		width: 100%;
 	}
 }
+
 
 
 @keyframes blink {
