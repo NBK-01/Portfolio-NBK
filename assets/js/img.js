@@ -1,7 +1,7 @@
-import imageOne from '../img/bookworm.jpg';
-import imageTwo from '../img/screenshot.jpg';
-import imageThree from '../img/Weather-Dash.jpg';
-import imageFour from '../img/Stocklypic.jpg';
+import imageOne from '../img/petstophome.png';
+import imageTwo from '../img/bookworm.jpg';
+import imageThree from '../img/screenshot.jpg';
+import imageFour from '../img/Weather-Dash.jpg';
 
 
 const images = {
