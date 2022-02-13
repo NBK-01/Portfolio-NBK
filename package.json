@@ -19,6 +19,10 @@
   },
   "homepage": "https://github.com/NBK-01/Portfolio-NBK#readme",
   "dependencies": {
+    "@gltf-transform/core": "^2.0.4",
+    "@gltf-transform/extensions": "^2.0.4",
+    "@gltf-transform/functions": "^2.0.4",
+    "draco3dgltf": "^1.5.0",
     "gsap": "^3.8.0",
     "three": "^0.133.1"
   },
