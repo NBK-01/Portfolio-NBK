@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="preload" href="./scene.json" as="fetch">
+    <link rel="preload" href="./assets/js/scene.json" as="fetch">
 </head>
 
 <body>
@@ -23,20 +23,27 @@
     
 
     <nav>
-        <a href="index.html"  class="brand-logo center hover-this"> <span> NBK </span> </a>
-        <div class="cursor"> </div>
+        <div class="nav-wrapper">
+            <div class="cursor"> </div>
+            <a href="index.html"  class="brand-logo center hover-this"> <span> NBK </span> </a>
+            <ul> 
+                <li> 
+                    <a class="nav-item" style="margin-left: 20px;"> Projects </a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
-      
+   
 
         
 <div class="main-scroll">
         <div class="content">
-            <div class="content-inner">
-                <h1> Creative Front-End Development </h1>
-                <div id='container'>
-                    <canvas id="canvas3d"></canvas>
-                </div>
+            <div id='container'>
+                <canvas id="canvas3d"></canvas>
+            </div>
+            <div class="content-inner-first">
+                <h1> Creative Front-End <br> Developer </h1>
             </div>
         </div>
         <div class="content">
@@ -51,6 +58,7 @@
             <h1> HELLo4 </h1>
         </div>
 </div> 
+
 
 
 
@@ -107,9 +115,9 @@
     </script>
 
 <script type="module">
-    import { Application } from './runtime.js';
+    import { Application } from './assets/js/runtime.js';
     const app = new Application();
-    app.load('./scene.json');
+    app.load('./assets/js/scene.json');
 </script>
 
 

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/index.c2ff2873.css">
-    <link rel="preload" href="/scene.f939e05e.js" as="fetch">
+    <link rel="preload" href="/scene.350b81e2.js" as="fetch">
 </head>
 
 <body>
@@ -23,20 +23,27 @@
     
 
     <nav>
-        <a href="/index.html" class="brand-logo center hover-this"> <span> NBK </span> </a>
-        <div class="cursor"> </div>
+        <div class="nav-wrapper">
+            <div class="cursor"> </div>
+            <a href="/index.html" class="brand-logo center hover-this"> <span> NBK </span> </a>
+            <ul> 
+                <li> 
+                    <a class="nav-item" style="margin-left: 20px;"> Projects </a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
-      
+   
 
         
 <div class="main-scroll">
         <div class="content">
-            <div class="content-inner">
-                <h1> Creative Front-End Development </h1>
-                <div id="container">
-                    <canvas id="canvas3d"></canvas>
-                </div>
+            <div id="container">
+                <canvas id="canvas3d"></canvas>
+            </div>
+            <div class="content-inner-first">
+                <h1> Creative Front-End <br> Developer </h1>
             </div>
         </div>
         <div class="content">
@@ -51,6 +58,7 @@
             <h1> HELLo4 </h1>
         </div>
 </div> 
+
 
 
 
@@ -236,12 +244,12 @@ var hs = new HorizontalScroll.default({
       this[globalName] = mainExports;
     }
   }
-})({"bnS0h":[function(require,module,exports) {
+})({"ha0HD":[function(require,module,exports) {
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "4a236f9275d0a351";
-module.bundle.HMR_BUNDLE_ID = "640a2b9874888657";
+module.bundle.HMR_BUNDLE_ID = "7e34379720f38fb5";
 "use strict";
 function _createForOfIteratorHelper(o, allowArrayLike) {
     var it;
@@ -554,12 +562,12 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"3foIT":[function(require,module,exports) {
-var _runtimeJs = require("./runtime.js");
+},{}],"cjYVr":[function(require,module,exports) {
+var _runtimeJs = require("./assets/js/runtime.js");
 const app = new _runtimeJs.Application();
-app.load('./scene.json');
+app.load('./assets/js/scene.json');
 
-},{"./runtime.js":"4CpU3"}],"4CpU3":[function(require,module,exports) {
+},{"./assets/js/runtime.js":"3bzqC"}],"3bzqC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Application", ()=>GF
@@ -31953,10 +31961,10 @@ async function J0() {
         addIndex: Zh
     };
     let [{ WebIO: r  }, { KHRONOS_EXTENSIONS: e , DracoMeshCompression: t  }, { weld: n  }, { createEncoderModule: i  }, s] = await Promise.all([
-        require("43290e3cf4212b34"),
-        require("eb8f59218f5b12a8"),
-        require("84a15c1e2386a28b"),
-        require("7c46553fe112d9af"),
+        require("4186fd4ca157bcd9"),
+        require("b6b66aa7b8d75b6"),
+        require("830b69965af83bd8"),
+        require("a47315222b261052"),
         fetch("/_libraries/draco_encoder.wasm").then((l)=>l.arrayBuffer()
         )
     ]), o = new r, a = await i({
@@ -35760,7 +35768,7 @@ var $S = class {
         });
         else if (t.uri === void 0) throw new Error("THREE.GLTFLoader: Image " + e + " is missing URI and bufferView");
         let p = Promise.resolve(u).then(function() {
-            return require("7c46553fe112d9af");
+            return require("a47315222b261052");
         }).then(function(res, m) {
             return new Promise(function(v, g) {
                 let y = v;
@@ -41743,8 +41751,8 @@ var GF = class {
 };
 ui.FONTS_PATH = "_assets/_fonts/";
 
-},{"43290e3cf4212b34":"6zsQN","eb8f59218f5b12a8":"cu0yK","84a15c1e2386a28b":"4e7sZ","7c46553fe112d9af":"kxFcv","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"6zsQN":[function(require,module,exports) {
-module.exports = require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('8Avz4') + "core.modern.96d761d7.js" + "?" + Date.now()).catch((err)=>{
+},{"4186fd4ca157bcd9":"2Guwl","b6b66aa7b8d75b6":"b0yIG","830b69965af83bd8":"eYPEz","a47315222b261052":"dE322","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"2Guwl":[function(require,module,exports) {
+module.exports = require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('aPMpl') + "core.modern.96d761d7.js" + "?" + Date.now()).catch((err)=>{
     delete module.bundle.cache[module.id];
     throw err;
 }).then(()=>module.bundle.root('ifnWt')
@@ -41845,38 +41853,38 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"cu0yK":[function(require,module,exports) {
+},{}],"b0yIG":[function(require,module,exports) {
 module.exports = Promise.all([
-    require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('8Avz4') + "core.modern.96d761d7.js" + "?" + Date.now()).catch((err)=>{
+    require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('aPMpl') + "core.modern.96d761d7.js" + "?" + Date.now()).catch((err)=>{
         delete module.bundle.cache[module.id];
         throw err;
     }),
-    require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('8Avz4') + "extensions.modern.2624bd95.js" + "?" + Date.now()).catch((err)=>{
+    require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('aPMpl') + "extensions.modern.2624bd95.js" + "?" + Date.now()).catch((err)=>{
         delete module.bundle.cache[module.id];
         throw err;
     })
 ]).then(()=>module.bundle.root('8heSO')
 );
 
-},{"./helpers/browser/js-loader":"285qT","./helpers/bundle-url":"chiK4"}],"4e7sZ":[function(require,module,exports) {
+},{"./helpers/browser/js-loader":"285qT","./helpers/bundle-url":"chiK4"}],"eYPEz":[function(require,module,exports) {
 module.exports = Promise.all([
-    require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('8Avz4') + "core.modern.96d761d7.js" + "?" + Date.now()).catch((err)=>{
+    require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('aPMpl') + "core.modern.96d761d7.js" + "?" + Date.now()).catch((err)=>{
         delete module.bundle.cache[module.id];
         throw err;
     }),
-    require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('8Avz4') + "extensions.modern.2624bd95.js" + "?" + Date.now()).catch((err)=>{
+    require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('aPMpl') + "extensions.modern.2624bd95.js" + "?" + Date.now()).catch((err)=>{
         delete module.bundle.cache[module.id];
         throw err;
     }),
-    require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('8Avz4') + "functions.modern.cacbcf47.js" + "?" + Date.now()).catch((err)=>{
+    require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('aPMpl') + "functions.modern.cacbcf47.js" + "?" + Date.now()).catch((err)=>{
         delete module.bundle.cache[module.id];
         throw err;
     })
 ]).then(()=>module.bundle.root('bXkSU')
 );
 
-},{"./helpers/browser/js-loader":"285qT","./helpers/bundle-url":"chiK4"}],"kxFcv":[function(require,module,exports) {
-module.exports = require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('8Avz4') + "draco3dgltf.009ca087.js" + "?" + Date.now()).catch((err)=>{
+},{"./helpers/browser/js-loader":"285qT","./helpers/bundle-url":"chiK4"}],"dE322":[function(require,module,exports) {
+module.exports = require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('aPMpl') + "draco3dgltf.009ca087.js" + "?" + Date.now()).catch((err)=>{
     delete module.bundle.cache[module.id];
     throw err;
 }).then(()=>module.bundle.root('4vwoG')
@@ -41912,7 +41920,7 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["bnS0h","3foIT"], "3foIT", "parcelRequire6c07")
+},{}]},["ha0HD","cjYVr"], "cjYVr", "parcelRequire6c07")
 
 </script>
 

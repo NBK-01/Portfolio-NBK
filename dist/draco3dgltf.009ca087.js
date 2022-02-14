@@ -469,10 +469,10 @@ module.exports = {
 };
 
 },{"./draco_encoder_gltf_nodejs":"fzwrx","./draco_decoder_gltf_nodejs":"lK5Hq"}],"fzwrx":[function(require,module,exports) {
+var global = arguments[3];
+var process = require("process");
 var __dirname = "node_modules/draco3dgltf";
 var __filename = "node_modules/draco3dgltf/draco_encoder_gltf_nodejs.js";
-var process = require("process");
-var global = arguments[3];
 var $jscomp = $jscomp || {
 };
 $jscomp.scope = {
@@ -2664,9 +2664,9 @@ module.exports = posix;
 
 },{}],"lK5Hq":[function(require,module,exports) {
 var process = require("process");
-var __filename = "node_modules/draco3dgltf/draco_decoder_gltf_nodejs.js";
-var __dirname = "node_modules/draco3dgltf";
 var global = arguments[3];
+var __dirname = "node_modules/draco3dgltf";
+var __filename = "node_modules/draco3dgltf/draco_decoder_gltf_nodejs.js";
 var $jscomp = $jscomp || {
 };
 $jscomp.scope = {

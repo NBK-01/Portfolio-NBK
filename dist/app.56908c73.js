@@ -118,47 +118,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"assets/js/app.js":[function(require,module,exports) {
-var loader = document.getElementById("preloader");
-window.addEventListener("load", function () {
-  loader.style.display = "none";
-});
-var toggleBtn = document.querySelector('.toggle-btn');
-var ul = document.querySelector('nav .link');
-var header = document.querySelector('#vanta');
-var workBtn = document.querySelector('.work-link');
-toggleBtn.addEventListener('click', function () {
-  toggleBtn.classList.toggle('active');
-  ul.classList.toggle('active');
-  header.classList.toggle('skew');
-});
-header.addEventListener('click', function () {
-  toggleBtn.classList.remove('active');
-  ul.classList.remove('active');
-  header.classList.remove('skew');
-});
-workBtn.addEventListener('click', function () {
-  window.location.href = 'work.html';
-});
-gsap.registerPlugin(ScrollTrigger);
-gsap.defaults({
-  ease: 'none'
-});
-var tl = gsap.timeline();
-tl.from('.intro', {
-  yPercent: 100
-}).from('.about', {
-  yPercent: 100
-});
-ScrollTrigger.create({
-  animation: tl,
-  trigger: '#main-view',
-  start: 'top top',
-  end: 'bottom -100%',
-  scrub: 1,
-  pin: true,
-  anticipatePin: 1,
-  ease: 'none'
-});
+
 },{}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -187,7 +147,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56156" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52272" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

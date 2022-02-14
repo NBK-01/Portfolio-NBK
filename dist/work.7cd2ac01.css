@@ -139,15 +139,28 @@ a{
 
 #work-list{
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 5%;
     width: 90%;
     height:0px;
     list-style: none;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
+
+/* @media only screen and (max-width:600px){
+    #work-list{
+        flex-direction: row;
+    }
+}
+
+
+@media only screen and (max-width:600px){
+    .work-item{
+        font-size: 10px;
+    }
+} */
 
 .work-item{
     position: relative;
@@ -201,7 +214,7 @@ a{
     color: var(--text);
     font-weight: bold;
     /* font-style: italic; */
-    font-size: 10px;
+    font-size: 35px;
     transition: 1s;
     cursor: url(icons8-hand-cursor-24.ac313210.png), auto;   
 }
