@@ -36553,7 +36553,7 @@ var WebGL = /*#__PURE__*/function () {
 
     _classCallCheck(this, WebGL);
 
-    this.container = document.querySelector('section');
+    this.container = document.querySelector('.work-con');
     this.links = _toConsumableArray(document.getElementsByClassName('work-item'));
     this.scene = new THREE.Scene();
     this.perspective = 1000;
@@ -36730,7 +36730,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52272" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52644" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

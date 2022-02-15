@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "parcel work.html",
+    "start": "parcel *.html",
     "build": "parcel build work.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,8 +22,11 @@
     "@gltf-transform/core": "^2.0.4",
     "@gltf-transform/extensions": "^2.0.4",
     "@gltf-transform/functions": "^2.0.4",
+    "dat.gui": "^0.7.7",
     "draco3dgltf": "^1.5.0",
+    "ev-emitter": "^2.1.2",
     "gsap": "^3.8.0",
+    "horizontal-scroll": "^1.1.0",
     "three": "^0.133.1"
   },
   "devDependencies": {

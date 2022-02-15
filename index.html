@@ -11,59 +11,64 @@
     <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="preload" href="./assets/js/scene.json" as="fetch">
 </head>
 
 <body>
 
-    
+    <div class="cursor"> </div>
 
     
     
 
     <nav>
         <div class="nav-wrapper">
-            <div class="cursor"> </div>
             <a href="index.html"  class="brand-logo center hover-this"> <span> NBK </span> </a>
-            <ul> 
-                <li> 
-                    <a class="nav-item" style="margin-left: 20px;"> Projects </a>
-                </li>
-            </ul>
         </div>
     </nav>
 
-   
 
         
-<div class="main-scroll">
+ <div class="main-scroll">
+    <ul class="social-list left"> 
+        <li> 
+            <a href="" class="nav-item" target="_blank"> Github </a>
+        </li>
+        <li>
+            <a href="" class="nav-item" target="_blank"> LinkedIn </a>
+        </li>
+        <li> 
+            <a href="" class="nav-item" target="_blank"> Resume </a>
+        </li>
+    </ul>
         <div class="content">
-            <div id='container'>
-                <canvas id="canvas3d"></canvas>
-            </div>
+            <div id="container"></div>
             <div class="content-inner-first">
-                <h1> Creative Front-End <br> Developer </h1>
+                <h1> 
+                    Creative Front-End <br> Developer 
+                </h1>
             </div>
         </div>
+
         <div class="content">
-            <h1> HELLo2 </h1>
+            <h1> About Sec </h1>
         </div>
     
         <div class="content">
-            <h1> HELLo3 </h1>
+           <h1> Project Sec</h1>
         </div>
     
         <div class="content">
             <h1> HELLo4 </h1>
         </div>
-</div> 
+    
+</div>  
+
+<script src="./assets/js/scrollAnim.js"></script> 
+<script type="module" src="./assets/js/sphere.js"></script>
 
 
-
-
-
-<script src="./assets/js/index.js"></script>
     
 <script> 
     var blocks = document.getElementsByClassName("content");
@@ -72,14 +77,14 @@
         blocks: blocks,
         container: container,
         isAnimated: true,
-        springEffect: 0.8,
+        springEffect: 2.0,
     })
 </script>
 
     
             
        
-<script>
+ <script>
 
     (function () {
     
@@ -112,17 +117,12 @@
     
     })();
     
-    </script>
-
-<script type="module">
-    import { Application } from './assets/js/runtime.js';
-    const app = new Application();
-    app.load('./assets/js/scene.json');
-</script>
+    </script> 
 
 
 
-    <script src="./assets/js/app.js"></script>
+    
+    <script src="./assets/js/work.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     
 
