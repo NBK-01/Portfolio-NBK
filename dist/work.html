@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> NBK-01 | Work </title>
+    <link rel="icon" type="image/png" href="/logo_size.a0ffb9f1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Epilogue&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/work.7cd2ac01.css">
@@ -16,21 +16,23 @@
 
 <body style="overflow: hidden;">
    
-    <div id="preloader"> </div>
-
+    <div class="cursor"></div>
 
     <nav>
-        <a href="/index.html" class="brand-logo center"> NBK </a>
+        <a href="/index.html" class="brand-logo center"> <span> NBK </span> </a>
 
-        <div class="link">
-            <ul>
-                <li class="work-link"> Work </li>
-                <li class="contact-link"> Contact </li>
-            </ul>
-        </div>
-        <div class="toggle-btn">
-            <i class="material-icons"> format_align_left </i>
-        </div>
+        <ul> 
+            <li> 
+                <a href="https://github.com/NBK-01" class="nav-item" target="_blank"> Github </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/nayef-kanaan-4aa1b1183/" class="nav-item" target="_blank"> LinkedIn </a>
+            </li>
+            <li> 
+                <a href="/assets/img/Nayef%20Kanaan-CV.pdf" class="nav-item" target="_blank"> Resume </a>
+            </li>
+        </ul>
+        
     </nav>
 
 
@@ -38,78 +40,49 @@
     <section>
         <div id="work">
 
-            <ul id="work-list" class="valign-wrapper center">
-                <li class="work-item"> <a class="modal-trigger"> The Pet Stop </a> <p> MERN | GraphQL | CSS-in-JS </p>  </li>
-                <li class="work-item"> <a class="modal-trigger">BookWorm Haven</a> <p> MySQL | HandleBars| Materialize | Node.Js | Express</p> </li>
-                <li class="work-item"> <a class="modal-trigger"> Trail Finder </a> <p> Local Storage | Materialize | JS | HTML</p> </li>
-                <li class="work-item"> <a class="modal-trigger"> Weather Dash </a> <p> Ajax | Bootstrap | Jquery | WebAPIs </p> </li>
+            <ul id="work-list" class="valign-wrapper">
+                <li class="work-item"> <span style="font-size: 3.3rem"> (01) </span><a class="work-item-link" href="https://www.mirathi.io" target="_blank"> Mirathi </a> </li> 
+                <li class="work-item"> <span style="font-size: 3.3rem"> (02) </span> <a class="work-item-link" href="https://stark-wildwood-15294.herokuapp.com/" target="_blank">Bookworm Haven</a>  </li>
+                <a class="repo-link" href="https://github.com/NBK-01/Bookworm-Haven" target="_blank"> Visit repo </a> 
+                <li class="work-item"> <span style="font-size: 3.3rem"> (03) </span> <a class="work-item-link" href="https://jyothybaby.github.io/Trail-Finder/" target="_blank">Trail Finder </a> </li>
+                <a class="repo-link" href="https://github.com/NBK-01/Trail-Finder" target="_blank"> Visit repo </a>
             </ul>
 
-            
-
-
-            <!-- <ul style="display:flex; flex-direction:row; justify-content: space-around;">
-                <li> <a style="font-size:20px;"> Heloo </a> </li>
-                <li> <a style="font-size:20px;"> Heloo </a> </li>
-            </ul> -->
         </div>
     </section>
 
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-         <ul>
-             <li><a href="https://stark-wildwood-15294.herokuapp.com/" target="_blank">View Demo</a></li>
-             <li><a href="https://github.com/NBK-01/Bookworm-Haven" target="_blank">Github Repo</a></li>
-         </ul>
-        </div>
-      </div>
-
-
-      <div id="modal2" class="modal">
-        <div class="modal-content">
-         <ul>
-             <li><a href="https://stark-wildwood-15294.herokuapp.com/" target="_blank">View Demo</a></li>
-             <li><a href="https://github.com/NBK-01/Bookworm-Haven" target="_blank">Github Repo</a></li>
-         </ul>
-        </div>
-      </div>
     
 
-      <div id="modal2" class="modal">
-        <div class="modal-content">
-         <ul>
-             <li><a href="https://jyothybaby.github.io/Trail-Finder/" target="_blank">View Demo</a></li>
-             <li><a href="https://github.com/NBK-01/Trail-Finder" target="_blank">Github Repo</a></li>
-         </ul>
-        </div>
-      </div>
 
 
-      <div id="modal3" class="modal">
-        <div class="modal-content">
-         <ul>
-             <li><a href="https://nbk-01.github.io/Weather-dash/" target="_blank">View Demo</a></li>
-             <li><a href="https://github.com/NBK-01/Weather-dash" target="_blank">Github Repo</a></li>
-         </ul>
-        </div>
-      </div>
 
+      <script>(function() {
+    const link = document.querySelectorAll('.hover-this');
+    const cursor = document.querySelector('.cursor');
+    const animateit = function(e) {
+        const span = this.querySelector('span');
+        const { offsetX: x , offsetY: y  } = e, { offsetWidth: width , offsetHeight: height  } = this, move = 25, xMove = x / width * (move * 2) - move, yMove = y / height * (move * 2) - move;
+        span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+        if (e.type === 'mouseleave') span.style.transform = '';
+    };
+    const editCursor = (e)=>{
+        const { clientX: x , clientY: y  } = e;
+        cursor.style.left = x + 'px';
+        cursor.style.top = y + 'px';
+    };
+    link.forEach((b)=>b.addEventListener('mousemove', animateit)
+    );
+    link.forEach((b)=>b.addEventListener('mouseleave', animateit)
+    );
+    window.addEventListener('mousemove', editCursor);
+})();
 
-      <div id="modal4" class="modal">
-        <div class="modal-content">
-         <ul>
-             <li><a href="https://github.com/NBK-01/Stockly-App" target="_blank">Github Repo</a></li>
-             <li style="border-bottom: 3px solid var(--accent);"> No Demo </li>
-         </ul>
-        </div>
-      </div>
-
-
+</script> 
+    
     
 
     
     <script src="/work.61390f06.js" defer=""></script>
-    <script src="/index.1e6d1e2b.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>

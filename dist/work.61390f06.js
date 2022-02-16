@@ -30680,8 +30680,8 @@ exports.export = function(dest, destName, get) {
 },{}],"cZaCj":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _petstophomePng = require("../img/petstophome.png");
-var _petstophomePngDefault = parcelHelpers.interopDefault(_petstophomePng);
+var _homePrevPng = require("../img/homePrev.png");
+var _homePrevPngDefault = parcelHelpers.interopDefault(_homePrevPng);
 var _bookwormJpg = require("../img/bookworm.jpg");
 var _bookwormJpgDefault = parcelHelpers.interopDefault(_bookwormJpg);
 var _screenshotJpg = require("../img/screenshot.jpg");
@@ -30689,15 +30689,15 @@ var _screenshotJpgDefault = parcelHelpers.interopDefault(_screenshotJpg);
 var _weatherDashJpg = require("../img/Weather-Dash.jpg");
 var _weatherDashJpgDefault = parcelHelpers.interopDefault(_weatherDashJpg);
 const images = {
-    imageOne: _petstophomePngDefault.default,
+    imageOne: _homePrevPngDefault.default,
     imageTwo: _bookwormJpgDefault.default,
     imageThree: _screenshotJpgDefault.default,
     imageFour: _weatherDashJpgDefault.default
 };
 exports.default = images;
 
-},{"../img/petstophome.png":"khxva","../img/bookworm.jpg":"jA1vB","../img/screenshot.jpg":"2F1Y0","../img/Weather-Dash.jpg":"9v44G","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"khxva":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('e2lI8') + "petstophome.6a080e67.png" + "?" + Date.now();
+},{"../img/bookworm.jpg":"jA1vB","../img/screenshot.jpg":"2F1Y0","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","../img/Weather-Dash.jpg":"9v44G","../img/homePrev.png":"d8RnP"}],"jA1vB":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('e2lI8') + "bookworm.1d2dd186.jpg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"chiK4"}],"chiK4":[function(require,module,exports) {
 "use strict";
@@ -30734,14 +30734,14 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"jA1vB":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('e2lI8') + "bookworm.1d2dd186.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"chiK4"}],"2F1Y0":[function(require,module,exports) {
+},{}],"2F1Y0":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('e2lI8') + "screenshot.45eaac96.jpg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"chiK4"}],"9v44G":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('e2lI8') + "Weather-Dash.587c9a06.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"chiK4"}],"d8RnP":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('e2lI8') + "homePrev.5bfc0c69.png" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"chiK4"}],"k5sNl":[function(require,module,exports) {
 module.exports = "#define GLSLIFY 1\n// uniform sampler2D uTexture;\n// uniform vec2 uOffset;\n// varying vec2 vUv;\n\n// float M_PI = 3.141529;\n\n// vec3 deformationCurve = (vec3 position, vec2 uv, vec2 offset){\n//     position.x = position.x + (sin(uv.y * M_PI) * offset.x);\n//     position.y = position.y + (sin(uv.x * M_PI) * offset.y);\n//     return position;\n// }\n\n// void main() {\n//     vUv = uv;\n//     vec3 newPosition = deformationCurve(position, uv, uOffset);\n//     gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);\n// }\n\nuniform sampler2D uTexture;\nuniform vec2 uOffset;\nvarying vec2 vUv;\n\nfloat M_PI = 3.141529;\n\nvec3 deformationCurve(vec3 position, vec2 uv, vec2 offset){\n    position.x = position.x + (sin(uv.y * M_PI) * offset.x);\n    position.y = position.y + (sin(uv.x * M_PI) * offset.y);\n    return position;\n}\n\nvoid main(){\n    vUv = uv;\n    vec3 newPosition = deformationCurve(position, uv, uOffset);\n    gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);\n}\n";
