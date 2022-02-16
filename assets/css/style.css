@@ -15,10 +15,7 @@
 }
 
 
-#container{
-    background: transparent;
-    z-index: -10000;
-}
+
 
 html, body{
     overflow: hidden;
@@ -126,20 +123,20 @@ span:hover{
 .content{
     position: relative;
     width: 100vw;
-    height: 100%;
+    height: 100vh;
 }
 
 
 
-    canvas {
-        position: absolute;
-        z-index: -2;
-      }
+canvas {
+    position: absolute;
+    z-index: 1;
+}
 
 #container { 
-    width: 60px;
-    height: 100px;
-    position: relative; 
+    width: 0px;
+    height: 0px;
+    position: relative;     
 }
 
 
@@ -147,24 +144,90 @@ span:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateY(40%);
-    text-align: center;
 }
 
 .content-inner-first h1{
-    font-size: 8vw;
+    font-size: 9vw;
     color: var(--text);
 }
 
 
 
+.content-inner-second{
+    width: 80%;
+}
+
+.about-intro{
+    font-size: 3.3vw;
+}
+
+.about-sub{
+    font-size: 30px;
+}
+
+.about-anim:before {
+    content:"Developer";
+    animation-name: change; 
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    -webkit-animation: webkit-change ease-in-out 3s infinite;
+    color: var(--accent);
+  }
+  
+  
+  
+  @keyframes change{
+    0% {
+        display: block;
+        content:"Developer";
+      }
+      50% {
+        display: block;
+        content:"Designer";
+        
+      }
+      75% {
+        display: block;
+        content:"Content creator";
+        
+      }
+      100% {
+        display: block;
+        content:"Developer";
+      }
+  }
 
 
+  @keyframes webkit-change{
+    0% {
+        display: block;
+        content:"Developer";
+      }
+      50% {
+        display: block;
+        content:"Designer";
+        
+      }
+      75% {
+        display: block;
+        content:"Content creator";
+        
+      }
+      100% {
+        display: block;
+        content:"Developer";
+      }
+  }
+  
+  .about-list{
+      display: flex;
+      flex-direction: row;
+      justify-content:space-between;
+      align-items: center; 
+  }
 
 
-
-
-
+  
 
 
 
