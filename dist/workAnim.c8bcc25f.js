@@ -36463,8 +36463,8 @@ if (typeof window !== 'undefined') {
     window.__THREE__ = REVISION;
   }
 }
-},{}],"assets/img/petstophome.png":[function(require,module,exports) {
-module.exports = "/petstophome.261cc97a.png";
+},{}],"assets/img/homePrev.png":[function(require,module,exports) {
+module.exports = "/homePrev.79c0388e.png";
 },{}],"assets/img/bookworm.jpg":[function(require,module,exports) {
 module.exports = "/bookworm.8bd90d91.jpg";
 },{}],"assets/img/screenshot.jpg":[function(require,module,exports) {
@@ -36479,7 +36479,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _petstophome = _interopRequireDefault(require("../img/petstophome.png"));
+var _homePrev = _interopRequireDefault(require("../img/homePrev.png"));
 
 var _bookworm = _interopRequireDefault(require("../img/bookworm.jpg"));
 
@@ -36490,14 +36490,14 @@ var _WeatherDash = _interopRequireDefault(require("../img/Weather-Dash.jpg"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var images = {
-  imageOne: _petstophome.default,
+  imageOne: _homePrev.default,
   imageTwo: _bookworm.default,
   imageThree: _screenshot.default,
   imageFour: _WeatherDash.default
 };
 var _default = images;
 exports.default = _default;
-},{"../img/petstophome.png":"assets/img/petstophome.png","../img/bookworm.jpg":"assets/img/bookworm.jpg","../img/screenshot.jpg":"assets/img/screenshot.jpg","../img/Weather-Dash.jpg":"assets/img/Weather-Dash.jpg"}],"assets/js/shaders/vertex.glsl":[function(require,module,exports) {
+},{"../img/homePrev.png":"assets/img/homePrev.png","../img/bookworm.jpg":"assets/img/bookworm.jpg","../img/screenshot.jpg":"assets/img/screenshot.jpg","../img/Weather-Dash.jpg":"assets/img/Weather-Dash.jpg"}],"assets/js/shaders/vertex.glsl":[function(require,module,exports) {
 module.exports = "#define GLSLIFY 1\n// uniform sampler2D uTexture;\n// uniform vec2 uOffset;\n// varying vec2 vUv;\n\n// float M_PI = 3.141529;\n\n// vec3 deformationCurve = (vec3 position, vec2 uv, vec2 offset){\n//     position.x = position.x + (sin(uv.y * M_PI) * offset.x);\n//     position.y = position.y + (sin(uv.x * M_PI) * offset.y);\n//     return position;\n// }\n\n// void main() {\n//     vUv = uv;\n//     vec3 newPosition = deformationCurve(position, uv, uOffset);\n//     gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);\n// }\n\nuniform sampler2D uTexture;\nuniform vec2 uOffset;\nvarying vec2 vUv;\n\nfloat M_PI = 3.141529;\n\nvec3 deformationCurve(vec3 position, vec2 uv, vec2 offset){\n    position.x = position.x + (sin(uv.y * M_PI) * offset.x);\n    position.y = position.y + (sin(uv.x * M_PI) * offset.y);\n    return position;\n}\n\nvoid main(){\n    vUv = uv;\n    vec3 newPosition = deformationCurve(position, uv, uOffset);\n    gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);\n}\n";
 },{}],"assets/js/shaders/fragment.glsl":[function(require,module,exports) {
 module.exports = "#define GLSLIFY 1\nuniform sampler2D uTexture;\nuniform float uAlpha;\nuniform vec2 uOffset;\nvarying vec2 vUv;\n\nvec3 rgbShift(sampler2D textureimage, vec2 uv, vec2 offset ){\n    float r = texture2D(textureimage, uv + offset).r;\n    vec2 gb = texture2D(textureimage, uv).gb;\n    return vec3(r, gb);\n}\n\nvoid main(){\n    // vec3 color = texture2D(uTexture, vUv).rgb;\n    vec3 color = rgbShift(uTexture, vUv, uOffset);\n    gl_FragColor = vec4(color, uAlpha);\n}";
@@ -36730,7 +36730,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57263" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58776" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

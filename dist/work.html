@@ -1,45 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> NBK-01 | Work </title>
-    <link rel="icon" type="image/png" href="/logo_size.a0ffb9f1.png">
+    <link rel="icon" type="image/png" href="/logo_size.5c1c1a48.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/work.7cd2ac01.css">
-</head>
+    <link rel="stylesheet" href="/work.10627fbb.css">
+<script src="/work.10627fbb.js"></script></head>
 
 <body style="overflow: hidden;">
-   
+
     <div class="cursor"></div>
 
     <nav>
-        <a href="/index.html" class="brand-logo center"> <span> NBK </span> </a>
-
-        <ul> 
-            <li> 
+        <a href="/index.html" class="brand-logo center hover-this"> <span> NBK </span> </a>
+        <ul>
+            <li>
                 <a href="https://github.com/NBK-01" class="nav-item" target="_blank"> Github </a>
             </li>
             <li>
-                <a href="https://www.linkedin.com/in/nayef-kanaan-4aa1b1183/" class="nav-item" target="_blank"> LinkedIn </a>
+                <a href="https://www.linkedin.com/in/nayef-kanaan-4aa1b1183/" class="nav-item" target="_blank"> LinkedIn
+                </a>
             </li>
-            <li> 
-                <a href="/assets/img/Nayef%20Kanaan-CV.pdf" class="nav-item" target="_blank"> Resume </a>
+            <li>
+                <a href="/assets\img\Nayef Kanaan-CV.pdf" class="nav-item" target="_blank"> Resume </a>
+            </li>
+            <li>
+                <a href="mailto:nbk01.dev@gmail.com" class="nav-item" target="_blank"> Email </a>
             </li>
         </ul>
 
-
-        <ul class="right"> 
-            <li> 
-                <a href="mailto:nbk01.dev@gmail.com" class="nav-item" target="_blank"> nbk01.dev@gmail.com </a>
-            </li>
-        </ul>
-        
     </nav>
 
 
@@ -48,48 +45,59 @@
         <div id="work">
 
             <ul id="work-list" class="valign-wrapper">
-                <li class="work-item"> <span style="font-size: 3.3rem"> (01) </span><a class="work-item-link" href="https://www.mirathi.io" target="_blank"> Mirathi </a> </li> 
-                <li class="work-item"> <span style="font-size: 3.3rem"> (02) </span> <a class="work-item-link" href="https://stark-wildwood-15294.herokuapp.com/" target="_blank">Bookworm Haven</a>  </li>
-                <a class="repo-link" href="https://github.com/NBK-01/Bookworm-Haven" target="_blank"> Visit repo </a> 
-                <li class="work-item"> <span style="font-size: 3.3rem"> (03) </span> <a class="work-item-link" href="https://jyothybaby.github.io/Trail-Finder/" target="_blank">Trail Finder </a> </li>
+                <li class="work-item"> <span class="work-item-num"> (01) </span><a class=" work-item-link" href="https://www.mirathi.io" target="_blank"> Mirathi </a> </li>
+                <li class="work-item"> <span class="work-item-num"> (02) </span> <a class="work-item-link" href="https://stark-wildwood-15294.herokuapp.com/" target="_blank">Bookworm Haven</a> </li>
+                <a class="repo-link" href="https://github.com/NBK-01/Bookworm-Haven" target="_blank"> Visit repo </a>
+                <li class="work-item"> <span class="work-item-num"> (03) </span> <a class="work-item-link" href="https://jyothybaby.github.io/Trail-Finder/" target="_blank">Trail Finder </a> </li>
                 <a class="repo-link" href="https://github.com/NBK-01/Trail-Finder" target="_blank"> Visit repo </a>
             </ul>
 
         </div>
     </section>
 
-    
 
 
 
 
-      <script>(function() {
-    const link = document.querySelectorAll('.hover-this');
-    const cursor = document.querySelector('.cursor');
-    const animateit = function(e) {
-        const span = this.querySelector('span');
-        const { offsetX: x , offsetY: y  } = e, { offsetWidth: width , offsetHeight: height  } = this, move = 25, xMove = x / width * (move * 2) - move, yMove = y / height * (move * 2) - move;
-        span.style.transform = `translate(${xMove}px, ${yMove}px)`;
-        if (e.type === 'mouseleave') span.style.transform = '';
-    };
-    const editCursor = (e)=>{
-        const { clientX: x , clientY: y  } = e;
-        cursor.style.left = x + 'px';
-        cursor.style.top = y + 'px';
-    };
-    link.forEach((b)=>b.addEventListener('mousemove', animateit)
-    );
-    link.forEach((b)=>b.addEventListener('mouseleave', animateit)
-    );
-    window.addEventListener('mousemove', editCursor);
-})();
 
-</script> 
-    
-    
+    <script>(function () {
+  var link = document.querySelectorAll('.hover-this');
+  var cursor = document.querySelector('.cursor');
 
-    
-    <script src="/work.61390f06.js" defer=""></script>
+  var animateit = function animateit(e) {
+    var span = this.querySelector('span');
+    var x = e.offsetX,
+        y = e.offsetY,
+        width = this.offsetWidth,
+        height = this.offsetHeight,
+        move = 25,
+        xMove = x / width * (move * 2) - move,
+        yMove = y / height * (move * 2) - move;
+    span.style.transform = "translate(".concat(xMove, "px, ").concat(yMove, "px)");
+    if (e.type === 'mouseleave') span.style.transform = '';
+  };
+
+  var editCursor = function editCursor(e) {
+    var x = e.clientX,
+        y = e.clientY;
+    cursor.style.left = x + 'px';
+    cursor.style.top = y + 'px';
+  };
+
+  link.forEach(function (b) {
+    return b.addEventListener('mousemove', animateit);
+  });
+  link.forEach(function (b) {
+    return b.addEventListener('mouseleave', animateit);
+  });
+  window.addEventListener('mousemove', editCursor);
+})();</script>
+
+
+
+
+    <script type="module" src="/workAnim.c8bcc25f.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
+
 </html>
