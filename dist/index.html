@@ -5,15 +5,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> NBK (In progress) </title>
-    <link rel="icon" type="image/png" href="/logo_size.5c1c1a48.png">
+    <!-- Primary Meta Tags -->
+<title>Creative Web Developer | Nayef Kanaan</title>
+<meta name="title" content="Creative Web Developer | Nayef Kanaan">
+<meta name="description" content="A portfolio creatively designed and built by myself (Nayef Kanaan) to showcase the most recent projects ranging from small and simple Front-End projects built with Nextjs to large scalable Full Stack applications. Enjoy :)">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nayefkanaan.com/">
+<meta property="og:title" content="Creative Web Developer | Nayef Kanaan">
+<meta property="og:description" content="A portfolio creatively designed and built by myself (Nayef Kanaan) to showcase the most recent projects ranging from small and simple Front-End projects built with Nextjs to large scalable Full Stack applications. Enjoy :)">
+<meta property="og:image" content="https://arfngkjkokcduwvpwghk.supabase.co/storage/v1/object/public/probably-images/Screen Shot 2022-07-26 at 9.45.28 PM.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://nayefkanaan.com/">
+<meta property="twitter:title" content="Creative Web Developer | Nayef Kanaan">
+<meta property="twitter:description" content="A portfolio creatively designed and built by myself (Nayef Kanaan) to showcase the most recent projects ranging from small and simple Front-End projects built with Nextjs to large scalable Full Stack applications. Enjoy :)">
+<meta property="twitter:image" content="https://arfngkjkokcduwvpwghk.supabase.co/storage/v1/object/public/probably-images/Screen Shot 2022-07-26 at 9.45.28 PM.png">
+    <link rel="icon" type="image/png" href="/logo_size.a0ffb9f1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/style.a11e3109.css">
-<script src="/style.a11e3109.js"></script><script src="/work.js"></script></head>
+    <link rel="stylesheet" href="/index.c2ff2873.css">
+</head>
 
 <body>
 
@@ -34,7 +51,7 @@
                         LinkedIn </a>
                 </li>
                 <li>
-                    <a href="/assets\img\Nayef Kanaan-CV.pdf" class="nav-item" target="_blank"> Resume </a>
+                    <a href="/assets/img/Nayef%20Kanaan-CV.pdf" class="nav-item" target="_blank"> Resume </a>
                 </li>
                 <li>
                     <a href="mailto:nbk01.dev@gmail.com" class="nav-item" target="_blank"> Email </a>
@@ -51,7 +68,7 @@
             <div id="container" class="center"></div>
             <div class="content-inner-first center">
                 <h1>
-                    Creative Front-End <br> Developer
+                    Creative Full-Stack <br> Engineer
                 </h1>
             </div>
         </div>
@@ -137,7 +154,7 @@
                 </li>
             </ul>
         </div>
-        <div style=" margin-top: 130px">
+        <div style="margin-top: 130px">
             <div class="center">
                 <h2> Interested? </h2>
                 <h5> Explore some of my most recent projects. </h5>
@@ -154,55 +171,47 @@
     
 
 
-    <script src="/scrollAnim.2d9d544d.js"></script>
-    <script type="module" src="/sphere.8d48f624.js"></script>
+    <script src="/index.2409dcc6.js"></script>
+    <script src="/index.4fe207d7.js" defer=""></script>
 
 
 
     <script>var blocks = document.getElementsByClassName("content");
 var container = document.getElementsByClassName("main-scroll");
 var hs = new HorizontalScroll.default({
-  blocks: blocks,
-  container: container,
-  isAnimated: true,
-  springEffect: 2.0
-});</script>
+    blocks: blocks,
+    container: container,
+    isAnimated: true,
+    springEffect: 2
+});
+
+</script>
 
 
 
 
-    <script>(function () {
-  var link = document.querySelectorAll('.hover-this');
-  var cursor = document.querySelector('.cursor');
+    <script>(function() {
+    const link = document.querySelectorAll('.hover-this');
+    const cursor = document.querySelector('.cursor');
+    const animateit = function(e) {
+        const span = this.querySelector('span');
+        const { offsetX: x , offsetY: y  } = e, { offsetWidth: width , offsetHeight: height  } = this, move = 25, xMove = x / width * (move * 2) - move, yMove = y / height * (move * 2) - move;
+        span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+        if (e.type === 'mouseleave') span.style.transform = '';
+    };
+    const editCursor = (e)=>{
+        const { clientX: x , clientY: y  } = e;
+        cursor.style.left = x + 'px';
+        cursor.style.top = y + 'px';
+    };
+    link.forEach((b)=>b.addEventListener('mousemove', animateit)
+    );
+    link.forEach((b)=>b.addEventListener('mouseleave', animateit)
+    );
+    window.addEventListener('mousemove', editCursor);
+})();
 
-  var animateit = function animateit(e) {
-    var span = this.querySelector('span');
-    var x = e.offsetX,
-        y = e.offsetY,
-        width = this.offsetWidth,
-        height = this.offsetHeight,
-        move = 25,
-        xMove = x / width * (move * 2) - move,
-        yMove = y / height * (move * 2) - move;
-    span.style.transform = "translate(".concat(xMove, "px, ").concat(yMove, "px)");
-    if (e.type === 'mouseleave') span.style.transform = '';
-  };
-
-  var editCursor = function editCursor(e) {
-    var x = e.clientX,
-        y = e.clientY;
-    cursor.style.left = x + 'px';
-    cursor.style.top = y + 'px';
-  };
-
-  link.forEach(function (b) {
-    return b.addEventListener('mousemove', animateit);
-  });
-  link.forEach(function (b) {
-    return b.addEventListener('mouseleave', animateit);
-  });
-  window.addEventListener('mousemove', editCursor);
-})();</script>
+</script>
 
 
 
